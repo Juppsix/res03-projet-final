@@ -1,0 +1,101 @@
+La route pour afficher la liste des catégories :  
+  
+/  
+  
+La route pour afficher les produits d'une catégorie :  
+  
+/categories/:slug-categorie  
+  
+  
+La route pour afficher la liste des produits :  
+  
+/produits  
+  
+  
+La route pour afficher le détail d'un produit :  
+  
+/produits/:slug-produit
+
+La route pour afficher la liste des catégories :  
+  
+/  
+  
+La route pour afficher les produits d'une catégorie :  
+  
+/categories/:slug-categorie  
+  
+  
+La route pour afficher la liste des produits :  
+  
+/produits  
+  
+  
+La route pour afficher le détail d'un produit :  
+  
+/produits/:slug-produit  
+  
+  
+La route qui affiche le formulaire d'inscription  
+  
+/creer-un-compte  
+  
+  
+La route qui créé un utilisateur (l'action du formulaire d'inscription)  
+  
+/check-creer-un-compte  
+  
+  
+La route qui affiche le formulaire de connexion  
+  
+/connexion  
+  
+  
+La route qui vérifie la connexion (l'action du formulaire de connexion)  
+  
+/check-connexion
+
+/creer-un-compte
+/check-creer-un-compte
+/connexion
+/check-connexion
+
+/creer-artistes
+/check-creer-artistes
+/creer-programmation
+/check-creer-programmation
+/modifier-artistes/:slug-artistes 
+/check-modifier-artistes/:slug-artistes
+
+/modifier-programmation/:slug-programmation 
+/check-modifier-programmation/:slug-programmation
+/supprimer-artistes/:slug-artistes
+/supprimer-programmation/:slug-programmation 
+
+
+public :
+
+page d’accueil : home 
+liste des artistes : artists 
+afficher la programmation ( 3 derniers ) : progs
+afficher le détail d’une programmation : prog
+afficher le détail d’un artiste : artist
+inscription : 
+connexion : 
+
+privé : 
+ 
+ Liste des artistes : admin-artist 
+
+Creer artiste : create-artist
+
+modifier artiste : edit-artist
+
+supprimer artiste : delete-artist
+
+liste des programmations : admin-prog 
+
+creer programmation : create-programmation
+
+modifier programmation : edit-programmation
+
+supprimer programmation : delete-programmation
