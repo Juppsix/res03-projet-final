@@ -1,6 +1,8 @@
 <?php  
   
 session_start();  
+
+
   
 require "config/autoload.php";  
   

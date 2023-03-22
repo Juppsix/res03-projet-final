@@ -12,40 +12,53 @@ class ProgrammationController extends AbstractController {
     }  
     
     /* Pour la route de la home */  
-    public function programmationList() : void  
+    public function programmation() : void  
     {  
-       $categories = $this->pm->getAllProgrammation();  // à remplacer par un appel au manager pour récupérer la liste des catégories  
-        $this->render("index", [  
-            "programmation" => $programmation  
-        ]);  
-    }
-        /* Pour la route /categories/:slug-categorie */  
-    public function artistInProgrammation(string $programmationSlug) : void  
-    {  
-        $products = $this->am->getArtistByProgrammationSlug($programmationSlug); // à remplacer par un appel au manager pour récupérer la liste des produits d'une catégorie  
-
+      $programmation = $this->pm->getProgrammationBySlug($programmationSlug);   //appel au manager pour récupérer les infos d'un artiste    
+    $artists = $this->am->getArtistByProgrammationSlug($programmationSlug);
         $this->render("programmation", [  
-            "artists" => $artists,
-            "programmation" => $programmationSlug
-        ]);  
+        "programmation" => $programmation,
+        "artists" => $artists
+         ]);   
     }
-        /* Pour la route /categories/produits */  
-    public function artistList() : void  
+          
+    public function programmations() : void  
     {  
-        $products = $this->am->getAllArtists();// à remplacer par un appel au manager pour récupérer la liste de tous les produits  
-      
-        $this->render("artists", [  
-            "artists" => $artists  
+        $programmations = $this->pm->getAllProgrammation();  //appel au manager pour récuperer la liste des artistes
+      var_dump($programmations);
+        $this->render("index", [  
+            "programmations" => $programmations  
         ]);  
     }
-        /* Pour la route /produits/:slug-produit */  
-    public function artistDetails(string $artistSlug) : void  
-    {  
-        $product = $this->am->getArtistBySlug($artistSlug); // à remplacer par un appel au manager pour récupérer les informations d'un produit  
-        $categories = $this->pm->getProgrammationByArtistSlug($artistSlug);
-        $this->render("artists", [  
-            "artists" => $artists,
-            "programmation" => $programmation
-        ]);  
+    
+    public function adminListProgrammation() : void 
+    {
+        
     }
+     
+    public function createProgrammation(array $post) : void 
+    {
+        $newProgrammation =  new Programmation($post["name"],$post["slug"],$post["description"]);
+         $createProgrammation = this->pm->createProgrammation($newProgrammation);
+         
+         $this->render($createProgrammation);
+    }
+    
+    public function editProgrammation(array $post) : void
+    {
+        $editProgrammation = new Programmation($post["name"],$post["slug"],$post["description"]);
+        $editedProgrammation = this->pm->editProgrammation($editProgrammation);
+        
+        $this->render($editerProgrammation);
+    }
+    
+    public function deleteProgrammation(array $post) : void 
+    {
+        $deleteProgrammation = newProgrammation($post["name"],$post["slug"],$post["description"]);
+        $deletedProgrammation = this->pm->deleteProgrammation($deleteProgrammation);
+        
+        $this->render($deleteProgrammation);
+    }
+    
+   
 }
