@@ -157,7 +157,18 @@ class Router {
             // appeler la méthode du controlleur pour afficher le détail d'un produit
             $this->atrl->artistDetails($routeTab['artistSlug']);
         }
-       
+        else if($routeTab['route'] === "create-artist")
+         {
+             $this->atrl->createArtist();
+         }
+         else if($routeTab['route'] === "edit-artist" && $routeTab['artistSlug'] !== null)
+         {
+             $this->atrl->editArtist($routeTab['artistSlug']);
+         }
+         else if($routeTab['route'] === "delete-artist" && $routeTab['artistSlug'] !== null)
+         {
+             $this->atrl->deleteArtist($routeTab['artistSlug']);
+         }
         else if($routeTab['route'] === "programmation" && $routeTab['programmationSlug'] === null) // condition(s) pour envoyer vers la liste des produits  
         {  
             // appeler la méthode du controlleur pour afficher les produits
@@ -168,10 +179,18 @@ class Router {
             // appeler la méthode du controlleur pour afficher le détail d'un produit
             $this->atrl->programmationDetails($routeTab['programmationSlug']);
         }
-        // else if($routeTab['route'] === "inscription")
-        // {
-            
-        // }
+          else if($routeTab['route'] === "create-programmation")
+         {
+             $this->atrl->createProgrammation();
+         }
+         else if($routeTab['route'] === "edit-programmation" && $routeTab['programmationSlug'] !== null)
+         {
+             $this->atrl->editProgrammation($routeTab['programmationSlug']);
+         }
+         else if($routeTab['route'] === "delete-programmation" && $routeTab['programmationSlug'] !== null)
+         {
+             $this->atrl->deleteProgrammation($routeTab['programmationSlug']);
+         }
         
         else if($routeTab["route"] === "creer-un-compte") // condition pour afficher la page du formulaire d'inscription  
         {  
