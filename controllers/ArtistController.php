@@ -35,6 +35,11 @@ class ArtistController extends AbstractController {
     public function adminListeArtist() : void 
     {
         
+         $this->render("admin-artist", [  
+       
+         ]);  
+        
+        
     }
     
     public function createArtist() : void 
@@ -43,7 +48,9 @@ class ArtistController extends AbstractController {
             $createArtist = this->am->createArtist($newArtist);
        
         // // create the Artist in the manager
-        $this->render($createArtist);
+         $this->render("create-artist", [  
+       
+         ]);  
         // // render the created Artist
         
     }
@@ -51,6 +58,12 @@ class ArtistController extends AbstractController {
     public function editArtist() : void 
     {
         
+         $editArtist = new Artist($post["name"],$post["slug"],$post["description"], $post["email"], $post["price"]);
+        $editedArtist = this->am->editArtist($editArtist);
+        
+         $this->render("edit-artist", [  
+       
+         ]);  
     }
     
      public function deleteArtist() : void 
@@ -59,41 +72,3 @@ class ArtistController extends AbstractController {
     }
     
 }
-//     /* Pour la route de la home */  
-//     public function artistList() : void  
-//     {  
-//       $categories = $this->pm->getAll();  // à remplacer par un appel au manager pour récupérer la liste des catégories  
-//         $this->render("index", [  
-//             "programmation" => $programmation  
-//         ]);  
-//     }
-//         /* Pour la route /categories/:slug-categorie */  
-//     public function artistsInProgrammation(string $categorySlug) : void  
-//     {  
-//         $products = $this->pm->getProductsByCategorySlug($categorySlug); // à remplacer par un appel au manager pour récupérer la liste des produits d'une catégorie  
-
-//         $this->render("category", [  
-//             "products" => $products,
-//             "category" => $categorySlug
-//         ]);  
-//     }
-//         /* Pour la route /categories/produits */  
-//     public function productsList() : void  
-//     {  
-//         $products = $this->pm->getAllProducts();// à remplacer par un appel au manager pour récupérer la liste de tous les produits  
-      
-//         $this->render("products", [  
-//             "products" => $products  
-//         ]);  
-//     }
-//         /* Pour la route /produits/:slug-produit */  
-//     public function productDetails(string $productSlug) : void  
-//     {  
-//         $product = $this->pm->getProductBySlug($productSlug); // à remplacer par un appel au manager pour récupérer les informations d'un produit  
-//         $categories = $this->cm->getCategoryByProductSlug($productSlug);
-//         $this->render("product", [  
-//             "product" => $product,
-//             "categories" => $categories
-//         ]);  
-//     }
-// }

@@ -37,18 +37,18 @@ class Router {
                     $routeAndParams["programmationSlug"] = $tab[1]; 
                     
                 }
-                else if($tab[0] === "creer-une-programmation")
+                else if($tab[0] === "create-programmation")
                 {
-                    $routeAndParams["route"] = "creer-une-programmation";
+                    $routeAndParams["route"] = "create-programmation";
                 }
-                else if($tab[0] === "modifier-une-programmation" && isset($tab[1]))
+                else if($tab[0] === "edit-programmation" && isset($tab[1]))
                 {
-                    $routeAndParams["route"] = "modifier-une-programmation";
+                    $routeAndParams["route"] = "edit-programmation";
                     $routeAndParams["programmationSlug"] = $tab[1];
                 }
-                else if($tab[0] === "supprimer-une-programmation" && isset($tab[1]))
+                else if($tab[0] === "delete-programmation" && isset($tab[1]))
                 {
-                    $routeAndParams["route"] = "supprimer-une-programmation";
+                    $routeAndParams["route"] = "delete-programmation";
                     $routeAndParams["programmationSlug"] = $tab[1];
                 }
                 else if($tab[0] === "artists") // écrire une condition pour le cas où la route commence par "categories"  
@@ -63,18 +63,18 @@ class Router {
                     $routeAndParams["programmationSlug"] = $tab[1]; 
                     
                 }
-                else if($tab[0] === "creer-un-artist")
+                else if($tab[0] === "create-artist")
                 {
-                    $routeAndParams["route"] = "creer-un-artist";
+                    $routeAndParams["route"] = "create-artist";
                 }
-                else if($tab[0] === "modifier-un-artist" && isset($tab[1]))
+                else if($tab[0] === "edit-artist" && isset($tab[1]))
                 {
-                    $routeAndParams["route"] = "modifier-un-artist";
+                    $routeAndParams["route"] = "edit-artist";
                     $routeAndParams["programmationSlug"] = $tab[1];
                 }
-                else if($tab[0] === "supprimer-un-artist" && isset($tab[1]))
+                else if($tab[0] === "delete-artist" && isset($tab[1]))
                 {
-                    $routeAndParams["route"] = "supprimer-un-artist";
+                    $routeAndParams["route"] = "delete-artist";
                     $routeAndParams["programmationSlug"] = $tab[1];
                 }
                 
@@ -150,12 +150,12 @@ class Router {
         else if($routeTab['route'] === "artists" && $routeTab['artistSlug'] === null) // condition(s) pour envoyer vers la liste des produits  
         {  
             // appeler la méthode du controlleur pour afficher les produits
-            $this->atrl->artistList();
+            $this->atrl->artists();
         }  
-        else if($routeTab['route'] === "artists" && $routeTab['artistSlug'] !== null) // condition(s) pour envoyer vers le détail d'un produit  
+        else if($routeTab['route'] === "artist" && $routeTab['artistSlug'] !== null) // condition(s) pour envoyer vers le détail d'un produit  
         {  
             // appeler la méthode du controlleur pour afficher le détail d'un produit
-            $this->atrl->artistDetails($routeTab['artistSlug']);
+            $this->atrl->artist($routeTab['artistSlug']);
         }
         else if($routeTab['route'] === "create-artist")
          {
@@ -169,27 +169,27 @@ class Router {
          {
              $this->atrl->deleteArtist($routeTab['artistSlug']);
          }
-        else if($routeTab['route'] === "programmation" && $routeTab['programmationSlug'] === null) // condition(s) pour envoyer vers la liste des produits  
+        else if($routeTab['route'] === "programmations" && $routeTab['programmationSlug'] === null) // condition(s) pour envoyer vers la liste des produits  
         {  
             // appeler la méthode du controlleur pour afficher les produits
-            $this->ptrl->programmationsList();
+            $this->ptrl->programmations();
         }  
          else if($routeTab['route'] === "programmation" && $routeTab['programmationSlug'] !== null) // condition(s) pour envoyer vers le détail d'un produit  
         {  
             // appeler la méthode du controlleur pour afficher le détail d'un produit
-            $this->atrl->programmationDetails($routeTab['programmationSlug']);
+            $this->ptrl->programmation($routeTab['programmationSlug']);
         }
           else if($routeTab['route'] === "create-programmation")
          {
-             $this->atrl->createProgrammation();
+             $this->ptrl->createProgrammation();
          }
          else if($routeTab['route'] === "edit-programmation" && $routeTab['programmationSlug'] !== null)
          {
-             $this->atrl->editProgrammation($routeTab['programmationSlug']);
+             $this->ptrl->editProgrammation($routeTab['programmationSlug']);
          }
          else if($routeTab['route'] === "delete-programmation" && $routeTab['programmationSlug'] !== null)
          {
-             $this->atrl->deleteProgrammation($routeTab['programmationSlug']);
+             $this->ptrl->deleteProgrammation($routeTab['programmationSlug']);
          }
         
         else if($routeTab["route"] === "creer-un-compte") // condition pour afficher la page du formulaire d'inscription  

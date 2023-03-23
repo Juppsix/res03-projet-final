@@ -1,7 +1,7 @@
 <?php
 class ArtistManager extends AbstractManager {
 
-    public function getAllArtist() : array
+    public function getAllArtists() : array
     { 
         $query = $this->db->prepare('SELECT * FROM artists');
         $query->execute();
@@ -11,9 +11,9 @@ class ArtistManager extends AbstractManager {
     {
         $art = new Artist($artist['name'], $artist['slug'], $artist['description'], $artist['price']);
         $art->setId($artist['id']);
-        $list[] = $prod;
+        $list[] = $art;
     }
-        return $artist;
+        return $art;
     }
 
     public function getArtistBySlug(string $artistSlug) : Product
@@ -52,5 +52,30 @@ class ArtistManager extends AbstractManager {
         $list[] = $art;
     }
         return $list;
+    }
+    
+    public function createArtist(Artist $artist) : Artist
+    {
+        $query = $this->db->prepare('INSERT INTO artists VALUES (:id, :name, :slug, :description)');
+        $parameters = [
+            'id' => $artist->getId(),
+            'name' => $artist->getName(),
+            'slug' => $artist->getSlug(),
+            'description' => $artist->getDescription()
+            ];
+            $query->execute($parameters);
+            $query->fetch(PDO::FETCH_ASSOC);
+            $id = $this->db->lastInsertId();
+            $artist->setId($id);
+    }
+    
+    public function editArtist(Artist $artist) : Artist 
+    {
+        
+    }
+    
+    public function deleteArtist(Artist $artist) : Artist 
+    {
+        
     }
 }

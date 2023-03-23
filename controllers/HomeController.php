@@ -16,7 +16,7 @@ class HomeController extends AbstractController {
   /* Pour la route de la home */  
   public function index() {
       
-        $this->render("homepage", []);
+        $this->render("home", []);
     }
 
 }

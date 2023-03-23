@@ -26,7 +26,7 @@ class ProgrammationController extends AbstractController {
     {  
         $programmations = $this->pm->getAllProgrammation();  //appel au manager pour récuperer la liste des artistes
       var_dump($programmations);
-        $this->render("index", [  
+        $this->render("progs", [  
             "programmations" => $programmations  
         ]);  
     }
@@ -34,6 +34,9 @@ class ProgrammationController extends AbstractController {
     public function adminListProgrammation() : void 
     {
         
+          $this->render("admin-prog", [  
+        
+         ]);   
     }
      
     public function createProgrammation(array $post) : void 
@@ -41,7 +44,9 @@ class ProgrammationController extends AbstractController {
         $newProgrammation =  new Programmation($post["name"],$post["slug"],$post["description"]);
          $createProgrammation = this->pm->createProgrammation($newProgrammation);
          
-         $this->render($createProgrammation);
+           $this->render("create-prog", [  
+        
+         ]);   
     }
     
     public function editProgrammation(array $post) : void
@@ -49,7 +54,9 @@ class ProgrammationController extends AbstractController {
         $editProgrammation = new Programmation($post["name"],$post["slug"],$post["description"]);
         $editedProgrammation = this->pm->editProgrammation($editProgrammation);
         
-        $this->render($editerProgrammation);
+          $this->render("edit-prog", [  
+        
+         ]);   
     }
     
     public function deleteProgrammation(array $post) : void 
@@ -57,7 +64,7 @@ class ProgrammationController extends AbstractController {
         $deleteProgrammation = newProgrammation($post["name"],$post["slug"],$post["description"]);
         $deletedProgrammation = this->pm->deleteProgrammation($deleteProgrammation);
         
-        $this->render($deleteProgrammation);
+     
     }
     
    
