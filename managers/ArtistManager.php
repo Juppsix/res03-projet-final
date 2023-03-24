@@ -71,11 +71,37 @@ class ArtistManager extends AbstractManager {
     
     public function editArtist(Artist $artist) : Artist 
     {
+        $query = $this->db->prepare('UPDATE artists SET name = :name, slug = :slug, description = :description');
+        $parameters = [
+        'name' => $artist->getName(),
+        'slug' => $artist->getSlug(),
+        'description' => $artist->getDescription(),
+        'id' => $artist->getId()
+            ];
+            
+             $query->execute($parameters);
         
+        return $artist;
     }
     
-    public function deleteArtist(Artist $artist) : Artist 
+    public function deleteArtist(string $slug) : Artist 
     {
-        
+         $query = $this->db->prepare('DELETE FROM artists WHERE slug = :slug');
+        $parameters = [
+            'slug' => $slug
+            ];
+        $query->execute($parameters);    
+    }
+    
+    public function getArtistById(Artist $artist) : Artist 
+    {
+        $query = $this->db->prepare('SELECT FROM artists WHERE id = :id');
+        $parameters = [
+            'id' => $artist->getId()
+            ];
+            
+            $query->execute($parameters);
+            
+            return $artist;
     }
 }

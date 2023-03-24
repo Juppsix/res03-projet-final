@@ -20,7 +20,7 @@ class ProgrammationManager extends AbstractManager {
         return $list;  
     }  
       
-    public function getCategoryBySlug(string $slug) : Category  
+    public function getProgrammationBySlug(string $slug) : Category  
     {  
         $query = $this->db->prepare('SELECT * FROM programmation WHERE programmation.slug=:slug '); 
                                         // Pour accéder à la base de données utilisez $this->db  
@@ -32,7 +32,7 @@ class ProgrammationManager extends AbstractManager {
         return $prog;
     }
     
-    public function getprogrammationByartistslug(string $slug) : array
+    public function getProgrammationByartistslug(string $slug) : array
     {
         $query = $this->db->prepare('SELECT programmation.* FROM artists_programmation JOIN artists ON artists_programmation.artists_id = artists.id JOIN 
                                         programmation ON artists_programmation.category_id = programmation.id WHERE artists.slug =:slug '); 
@@ -48,5 +48,65 @@ class ProgrammationManager extends AbstractManager {
             $list[] = $prog;
        }
         return $list;
+    }
+    
+    public function createProgrammation(Programmation $programmation) : Programmation
+    {
+        $query = $this->db->prepare('INSERT INTO programmation VALUES (:id, :name, :slug, :description)');
+        $parameters = [
+            'id' => $programmation->getId(),
+            'name' => $programmation->getName(),
+            'slug' => $programmation->getSlug(),
+            'description' => $programmation->getDescription()
+            ];
+            $query->execute($parameters);
+            $query->fetch(PDO::FETCH_ASSOC);
+            $id = $this->db->lastInsertId();
+            $programmation->setId($id);
+    }
+    
+     public function editProgrammation(Programmation $programmation) : Programmation
+    {
+        $query = $this->db->prepare('UPDATE programmation SET name = :name, slug = :slug, description = :description');
+        $parameters = [
+            'name' => $programmation->getName(),
+            'slug' => $programmation->getSlug(),
+            'description' => $programmation->getDescription(),
+            'id' => $programmation->getId()
+            ];
+            
+             $query->execute($parameters);
+        
+        return $programmation;
+    }
+    
+     public function DeleteProgrammation(Programmation $programmation) : Programmation
+    {
+         $query = $this->db->prepare('DELETE FROM programmation WHERE name = :name');
+        $parameters = [
+            'programmation_name' => $programmationName
+            ];
+        $query->execute($parameters);    
+    }
+    
+    public function getProgrammationById(Programmation $programmation) : Programmation 
+    {
+        $query = $this->db->prepare('SELECT FROM programmation WHERE id = :id');
+        $parameters = [
+            'id' => $programmation->getId()
+            ];
+            
+        $query->execute($parameters);
+            
+        return $programmation;
+    }
+    
+    public function getLatestProgrammations(Programmation $programmation) : Programmation 
+    {
+        
+        
+        
+        
+        
     }
 }

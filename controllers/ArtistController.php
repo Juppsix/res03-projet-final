@@ -42,7 +42,7 @@ class ArtistController extends AbstractController {
         
     }
     
-    public function createArtist() : void 
+    public function createArtist(array $post) : void 
     {
           $newArtist =  new Artist($post["name"],$post["slug"],$post["description"],$post["email"],$post["price"]);
             $createArtist = this->am->createArtist($newArtist);
@@ -55,7 +55,7 @@ class ArtistController extends AbstractController {
         
     }
     
-    public function editArtist() : void 
+    public function editArtist(string $artistSlug) : void 
     {
         
          $editArtist = new Artist($post["name"],$post["slug"],$post["description"], $post["email"], $post["price"]);
@@ -66,9 +66,9 @@ class ArtistController extends AbstractController {
          ]);  
     }
     
-     public function deleteArtist() : void 
+     public function deleteArtist(string $artistSlug) : void 
     {
-        
+        $artist = $this->am->deleteArtist($artistSlug);
     }
     
 }

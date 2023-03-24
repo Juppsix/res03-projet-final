@@ -1,0 +1,19 @@
+<main class="container py-5">  
+    <h2 class="mb-5">Connexion</h2>  
+    <form method="post" action="/res03-auth/check-connexion" class="col-4">  
+        <input type="hidden" name="formName" id="formName" value="loginForm" />  
+        <fieldset class="mb-3">  
+            <label for="email" class="form-label">  
+                Email  
+            </label>  
+            <input type="email" name="email" id="email" class="form-control" required />  
+        </fieldset>  
+        <fieldset class="mb-5">  
+            <label for="password" class="form-label">  
+                Mot de passe  
+            </label>  
+            <input type="password" name="password" id="password" class="form-control" required />  
+        </fieldset>  
+        <button type="submit" class="btn btn-primary">Se Connecter</button>  
+    </form>  
+</main>
