@@ -141,6 +141,23 @@ class Router {
                 {
                     $routeAndParams["route"] = $tab[0];
                 }
+                else if($tab[0] === "deconnexion")
+                {
+                    $routeAndParams["route"] = $tab[0];
+                }
+                  else if($tab[0] === "admin-artist")
+                {
+                    $routeAndParams["route"] = $tab[0];
+                }
+                   else if($tab[0] === "admin-progs")
+                {
+                    $routeAndParams["route"] = $tab[0];
+                }
+                else if($tab[0] === "404")
+                {
+                    $routeAndParams["route"] = $tab[0];
+                }
+                
             }
             
             else  
@@ -174,15 +191,27 @@ class Router {
         }
         else if($routeTab['route'] === "create-artist")
          {
-             $this->atrl->createArtist($_POST);
+            if ($_SESSION['user'] === "admin") {
+                  $this->atrl->createArtist($_POST);
+            } else {
+                header('Location: /res03-projet-final');
+            }
          }
          else if($routeTab['route'] === "edit-artist" && $routeTab['artistSlug'] !== null)
          {
-             $this->atrl->editArtist($routeTab['artistSlug']);
+             if ($_SESSION['user'] === "admin") {
+                $this->atrl->editArtist($routeTab['artistSlug']);
+            } else {
+                header('Location: /res03-projet-final');
+            }
          }
          else if($routeTab['route'] === "delete-artist" && $routeTab['artistSlug'] !== null)
          {
-             $this->atrl->deleteArtist($routeTab['artistSlug']);
+             if ($_SESSION['user'] === "admin") {
+                 $this->atrl->deleteArtist($routeTab['artistSlug']);
+            } else {
+                header('Location: /res03-projet-final');
+            }
          }
         else if($routeTab['route'] === "programmations" && $routeTab['programmationSlug'] === null) // condition(s) pour envoyer vers la liste des produits  
         {  
@@ -196,15 +225,28 @@ class Router {
         }
           else if($routeTab['route'] === "create-prog")
          {
-             $this->ptrl->createProgrammation($_POST);
+              if ($_SESSION['user'] === "admin") {
+                 $this->ptrl->createProgrammation($_POST);
+            } else {
+                header('Location: /res03-projet-final');
+            }
+             
          }
          else if($routeTab['route'] === "edit-programmation" && $routeTab['programmationSlug'] !== null)
          {
+               if ($_SESSION['user'] === "admin") {
              $this->ptrl->editProgrammation($routeTab['programmationSlug']);
+            } else {
+                header('Location: /res03-projet-final');
+            }
          }
          else if($routeTab['route'] === "delete-programmation" && $routeTab['programmationSlug'] !== null)
          {
-             $this->ptrl->deleteProgrammation($routeTab['programmationSlug']);
+               if ($_SESSION['user'] === "admin") {
+               $this->ptrl->deleteProgrammation($routeTab['programmationSlug']);
+            } else {
+                header('Location: /res03-projet-final');
+            }
          }
         
         else if($routeTab["route"] === "creer-un-compte") // condition pour afficher la page du formulaire d'inscription  
@@ -223,8 +265,32 @@ class Router {
         {  
             $this->auth->checkLogin($_POST); // appeler la méthode du controlleur pour vérifier la connexion et renvoyer vers l'accueil  
         }
-        
-    } 
+        else if($routeTab["route"] === "deconnexion") // condition pour l'action du formulaire de connexion  
+        {  
+            $this->auth->logout($_POST); // appeler la méthode du controlleur pour vérifier la connexion et renvoyer vers l'accueil  
+        }
+         else if($routeTab["route"] === "admin-artist") // condition pour l'action du formulaire de connexion  
+        {  
+             if ($_SESSION['user'] === "admin") {
+            $this->atrl->adminListeArtist(); // appeler la méthode du controlleur pour vérifier la connexion et renvoyer vers l'accueil  
+            } else {
+                header('Location: /res03-projet-final');
+            }
+        }
+          else if($routeTab["route"] === "admin-progs") // condition pour l'action du formulaire de connexion  
+        {  
+            if ($_SESSION['user'] === "admin") {
+                $this->ptrl->adminListProgrammation(); 
+            } else {
+                header('Location: /res03-projet-final');
+            }
+        }
+        else if($routeTab["route"] === "404") // condition pour l'action du formulaire de connexion  
+        {  
+            
+        }
+    
+}
 }
 
 

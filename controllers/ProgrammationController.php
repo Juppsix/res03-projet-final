@@ -27,16 +27,26 @@ class ProgrammationController extends AbstractController {
     public function programmations() : void  
     {  
         $programmations = $this->pm->getAllProgrammation();  //appel au manager pour récuperer la liste des artistes
+        if ($_SESSION["user"] === "customer" || $_SESSION["user"] === "admin"){
         $this->render("progs", [  
-            "programmations" => $programmations  
-        ]);  
+        "programmations" => $programmations,
+        "header" => 'partials/_connect-header.phtml',
+        ]);
+         
+        } else {
+    
+        $this->render("progs", [  
+        "programmations" => $programmations,
+        "header" => "partials/_header.phtml",
+         ]);
+        }  
     }
     
     public function adminListProgrammation() : void 
     {
         
-          $this->render("admin-prog", [  
-        
+          $this->render("admin-progs", [  
+        "header" => "partials/_admin-header.phtml",
          ]);   
     }
      
@@ -50,12 +60,13 @@ class ProgrammationController extends AbstractController {
            $this->render("create-prog", [  
         "name" => $createProgrammation->getName(),
         "slug" => $createProgrammation->getSlug(),
-        "description" => $createProgrammation->getDescription()
+        "description" => $createProgrammation->getDescription(),
+        "header" => "partials/_admin-header.phtml",
          ]);
     } else {
         
     $this->render("create-prog", [
-        
+        "header" => "partials/_admin-header.phtml",
         ]);
     }
     }
@@ -66,7 +77,7 @@ class ProgrammationController extends AbstractController {
         $editedProgrammation = this->pm->editProgrammation($editProgrammation);
         
           $this->render("edit-prog", [  
-        
+        "header" => "partials/_admin-header.phtml",
          ]);   
     }
     

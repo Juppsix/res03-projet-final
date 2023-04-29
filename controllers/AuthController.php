@@ -52,7 +52,8 @@ class AuthController extends AbstractController {
     /* Pour la page de connexion */  
     public function login() : void  
     {  
-      $this->render("login", []);  // render la page avec le formulaire de connexion  
+      $this->render("login", ['header' => 'partials/_header.phtml']); 
+      // render la page avec le formulaire de connexion  
     }  
       
     /* Pour vérifier la connexion */  
@@ -60,6 +61,7 @@ class AuthController extends AbstractController {
     {  
         
        if(isset($post["formName"])
+       && $post["formName"] === "loginForm"
         && isset($post["email"])&&!empty($post["email"])
         && isset($post["password"])&&!empty($post["password"])
        ){ // vérifier que le formulaire a été soumis  
@@ -70,7 +72,8 @@ class AuthController extends AbstractController {
             if ($user) 
             {
                 if(password_verify($password, $user->getPassword())){
-                    $_SESSION["user"] = $user;  // utiliser le manager pour vérifier si un utilisateur avec cet email existe    
+                    $_SESSION["user"] = $user->getRole();
+                    // utiliser le manager pour vérifier si un utilisateur avec cet email existe    
                     header('Location: /res03-projet-final'); // si il est bon, connecter l'utilisateur  
                 }
                 else{
@@ -86,5 +89,9 @@ class AuthController extends AbstractController {
                    
                 
        }
+    }
+    public function logout() {
+        session_destroy();
+        header('Location: /res03-projet-final/connexion');
     }
 }

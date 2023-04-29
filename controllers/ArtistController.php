@@ -36,8 +36,8 @@ class ArtistController extends AbstractController {
     public function adminListeArtist() : void 
     {
         
-         $this->render("admin-artist", [  
-       
+         $this->renderAdmin("admin-artist", [  
+       "header" => "partials/_admin-header.phtml",
          ]);  
         
         
@@ -50,16 +50,17 @@ class ArtistController extends AbstractController {
     if (isset($post["name"], $post["slug"], $post["description"], $post["price"])) {
         $newArtist =  new Artist($post["name"],$post["slug"],$post["description"],$post["price"]);
         $createdArtist = $this->am->createArtist($newArtist);
-        $this->render("create-artist", [
+        $this->renderAdmin("create-artist", [
             "name" => $createdArtist->getName(),
             "slug" => $createdArtist->getSlug(),
             "description" => $createdArtist->getDescription(),
-            "price" => $createdArtist->getPrice()
+            "price" => $createdArtist->getPrice(),
+            "header" => "partials/_admin-header.phtml",
         ]);
     } else {
         
-         $this->render("create-artist", [
-             
+         $this->renderAdmin("create-artist", [
+             "header" => "partials/_admin-header.phtml",
               ]);
     }
 }
@@ -72,17 +73,18 @@ class ArtistController extends AbstractController {
          $editArtist = new Artist($post["name"],$post["slug"],$post["description"], $post["email"], $post["price"]);
         $editedArtist = this->am->editArtist($editArtist);
         
-         $this->render("edit-artist", [  
+         $this->renderAdmin("edit-artist", [  
              "name" => $editedArtist->getName(),
             "slug" => $editedArtist->getSlug(),
             "description" => $editedArtist->getDescription(),
-            "price" => $editedArtist->getPrice()
+            "price" => $editedArtist->getPrice(),
+            "header" => "partials/_admin-header.phtml",
        
          ]);
          
     } else {
-        $this->render("edit-artist", [
-            
+        $this->renderAdmin("edit-artist", [
+            "header" => "partials/_admin-header.phtml"
             ]);
     }
     }
