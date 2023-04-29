@@ -1,1 +1,14 @@
 <h1>Ceci est la page pour modif un artist</h1>
+
+<form action="/edit-artist" method="post">
+    <input type="hidden" name="artist_id" value="<?php echo $artist['id']; ?>">
+    <label for="name">Nom de l'artiste:</label>
+    <input type="text" name="name" value="<?php echo $artist['name']; ?>"><br>
+    <label for="slug">Slug:</label>
+    <input type="text" name="slug" value="<?php echo $artist['slug']; ?>"><br>
+    <label for="description">Description:</label>
+    <textarea name="description"><?php echo $artist['description']; ?></textarea><br>
+    <label for="price">Prix:</label>
+    <input type="number" name="price" value="<?php echo $artist['price']; ?>"><br>
+    <input type="submit" value="Mettre à jour">
+</form>

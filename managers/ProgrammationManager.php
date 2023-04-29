@@ -26,7 +26,7 @@ class ProgrammationManager extends AbstractManager {
                                         // Pour accéder à la base de données utilisez $this->db  
         $parameter = ["slug" =>$slug];
         $query->execute($parameter);
-        $programations = $query->fetch(PDO::FETCH_ASSOC);
+        $programmations = $query->fetch(PDO::FETCH_ASSOC);
         $prog = new Category($programmation["name"], $programmation["slug"], $programmation["description"]);
         $prog->setId($programmation["id"]);
         return $prog;
@@ -63,6 +63,8 @@ class ProgrammationManager extends AbstractManager {
             $query->fetch(PDO::FETCH_ASSOC);
             $id = $this->db->lastInsertId();
             $programmation->setId($id);
+            
+            return $programmation;
     }
     
      public function editProgrammation(Programmation $programmation) : Programmation

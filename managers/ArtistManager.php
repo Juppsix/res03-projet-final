@@ -13,7 +13,7 @@ class ArtistManager extends AbstractManager {
         $art->setId($artist['id']);
         $list[] = $art;
     }
-        return $art;
+        return $list;
     }
 
     public function getArtistBySlug(string $artistSlug) : Product
@@ -56,27 +56,31 @@ class ArtistManager extends AbstractManager {
     
     public function createArtist(Artist $artist) : Artist
     {
-        $query = $this->db->prepare('INSERT INTO artists VALUES (:id, :name, :slug, :description)');
+        $query = $this->db->prepare('INSERT INTO artists VALUES (:id, :name, :slug, :description, :price)');
         $parameters = [
             'id' => $artist->getId(),
             'name' => $artist->getName(),
             'slug' => $artist->getSlug(),
-            'description' => $artist->getDescription()
+            'description' => $artist->getDescription(),
+            'price' => $artist->getPrice()
             ];
             $query->execute($parameters);
             $query->fetch(PDO::FETCH_ASSOC);
             $id = $this->db->lastInsertId();
             $artist->setId($id);
+            
+               return $artist;
     }
     
     public function editArtist(Artist $artist) : Artist 
     {
-        $query = $this->db->prepare('UPDATE artists SET name = :name, slug = :slug, description = :description');
+        $query = $this->db->prepare('UPDATE artists SET name = :name, slug = :slug, description = :description  WHERE id = :id');
         $parameters = [
         'name' => $artist->getName(),
         'slug' => $artist->getSlug(),
         'description' => $artist->getDescription(),
-        'id' => $artist->getId()
+        'id' => $artist->getId(),
+        'price' => $artist->getPrice()
             ];
             
              $query->execute($parameters);

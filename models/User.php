@@ -5,14 +5,16 @@ class User {
     private ?int $id;  
     private string $username;  
     private string $email;  
-    private string $password;  
+    private string $password;
+    private ?string $role;
   
-    public function __construct(?int $id, string $username, string $email, string $password)  
+    public function __construct(?int $id, string $username, string $email, string $password, ?string $role)  
     {  
         $this->id = $id;  
         $this->username = $username;  
         $this->email = $email;  
         $this->password = $password;  
+        $this->role = $role;
     }  
   
     /**  
@@ -66,8 +68,21 @@ class User {
     /**  
      * @param string $password  
      */  
-    public function setPassword(string $password): void  
+    public function setPassword(string $role): void  
     {  
         $this->password = $password;  
+    }  
+    
+    public function getRole(): string  
+    {  
+        return $this->role;  
+    }  
+  
+    /**  
+     * @param string $password  
+     */  
+    public function setRole(string $role): void  
+    {  
+        $this->role = $role;  
     }  
 }

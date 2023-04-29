@@ -14,6 +14,7 @@ class ProgrammationController extends AbstractController {
     /* Pour la route de la home */  
     public function programmation() : void  
     {  
+         $programmationSlug = $this->routeAndParams["programmationSlug"];
       $programmation = $this->pm->getProgrammationBySlug($programmationSlug);   //appel au manager pour récupérer les infos d'un artiste    
     $artists = $this->am->getArtistByProgrammationSlug($programmationSlug);
         $this->render("programmation", [  
@@ -21,11 +22,11 @@ class ProgrammationController extends AbstractController {
         "artists" => $artists
          ]);   
     }
+
           
     public function programmations() : void  
     {  
         $programmations = $this->pm->getAllProgrammation();  //appel au manager pour récuperer la liste des artistes
-      var_dump($programmations);
         $this->render("progs", [  
             "programmations" => $programmations  
         ]);  
@@ -41,12 +42,22 @@ class ProgrammationController extends AbstractController {
      
     public function createProgrammation(array $post) : void 
     {
+        
+        if (isset($post["name"], $post["slug"], $post["description"])) {
         $newProgrammation =  new Programmation($post["name"],$post["slug"],$post["description"]);
-         $createProgrammation = this->pm->createProgrammation($newProgrammation);
+         $createProgrammation = $this->pm->createProgrammation($newProgrammation);
          
            $this->render("create-prog", [  
+        "name" => $createProgrammation->getName(),
+        "slug" => $createProgrammation->getSlug(),
+        "description" => $createProgrammation->getDescription()
+         ]);
+    } else {
         
-         ]);   
+    $this->render("create-prog", [
+        
+        ]);
+    }
     }
     
     public function editProgrammation(array $post) : void

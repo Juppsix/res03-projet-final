@@ -3,15 +3,15 @@
 class Router {  
     private ProgrammationController $ptrl;
     private ArtistController $atrl;
-    private AuthController $auth; 
     private HomeController $htrl;
+    private AuthController $auth;
   
     public function __construct()  
         {  
             $this->ptrl = new ProgrammationController();
             $this->atrl = new ArtistController();
-            $this->auth = new AuthController(); 
             $this->htrl = new HomeController();
+            $this->auth = new AuthController(); 
         }
     private function splitRouteAndParameters(string $route) : array  
         {  
@@ -30,13 +30,20 @@ class Router {
                     // mettre les bonnes valeurs dans le tableau  
                     $routeAndParams["route"] = "programmations";  
                 }  
-                else if($tab[0] === "programmation" && isset($tab[1])) // écrire une condition pour le cas où la route commence par "produits"  
-                {  
-                    // mettre les bonnes valeurs dans le tableau  
-                    $routeAndParams["route"] = "programmation";
-                    $routeAndParams["programmationSlug"] = $tab[1]; 
+                // else if($tab[0] === "programmation" && isset($tab[1])) // écrire une condition pour le cas où la route commence par "produits"  
+                // {  
+                //     // mettre les bonnes valeurs dans le tableau  
+                //     $routeAndParams["route"] = "programmation";
+                //     $routeAndParams["programmationSlug"] = $tab[1]; 
                     
-                }
+                // }
+                
+                else if($tab[0] === "programmation" && isset($tab[1]))  
+{  
+                // mettre les bonnes valeurs dans le tableau  
+                $this->routeAndParams["route"] = "programmation";
+                $this->routeAndParams["programmationSlug"] = $tab[1]; 
+}
                 else if($tab[0] === "create-programmation")
                 {
                     $routeAndParams["route"] = "create-programmation";
@@ -50,6 +57,10 @@ class Router {
                 {
                     $routeAndParams["route"] = "delete-programmation";
                     $routeAndParams["programmationSlug"] = $tab[1];
+                }
+                 else if($tab[0] === "billetterie")
+                {
+                    $routeAndParams["route"] = "billetterie";
                 }
                 else if($tab[0] === "artists") // écrire une condition pour le cas où la route commence par "categories"  
                 {  
@@ -106,7 +117,7 @@ class Router {
                 {
                     $routeAndParams["route"] = $tab[0];
                 }
-                else if($tab[0] === "creer-programmation")
+                else if($tab[0] === "create-prog")
                 {
                     $routeAndParams["route"] = $tab[0];
                 }
@@ -123,6 +134,10 @@ class Router {
                     $routeAndParams["route"] = $tab[0];
                 }
                 else if($tab[0] === "prog")
+                {
+                    $routeAndParams["route"] = $tab[0];
+                }
+                 else if($tab[0] === "billetterie")
                 {
                     $routeAndParams["route"] = $tab[0];
                 }
@@ -159,7 +174,7 @@ class Router {
         }
         else if($routeTab['route'] === "create-artist")
          {
-             $this->atrl->createArtist();
+             $this->atrl->createArtist($_POST);
          }
          else if($routeTab['route'] === "edit-artist" && $routeTab['artistSlug'] !== null)
          {
@@ -179,9 +194,9 @@ class Router {
             // appeler la méthode du controlleur pour afficher le détail d'un produit
             $this->ptrl->programmation($routeTab['programmationSlug']);
         }
-          else if($routeTab['route'] === "create-programmation")
+          else if($routeTab['route'] === "create-prog")
          {
-             $this->ptrl->createProgrammation();
+             $this->ptrl->createProgrammation($_POST);
          }
          else if($routeTab['route'] === "edit-programmation" && $routeTab['programmationSlug'] !== null)
          {
@@ -198,7 +213,7 @@ class Router {
         }  
         else if($routeTab["route"] === "check-creer-un-compte") // condition pour l'action du formulaire d'inscription  
         {  
-            $this->auth->checkRegister();// appeler la méthode du controlleur pour créer un utilisateur et renvoyer vers l'accueil  
+            $this->auth->checkRegister($_POST);// appeler la méthode du controlleur pour créer un utilisateur et renvoyer vers l'accueil  
         }  
         else if($routeTab["route"] === "connexion") // condition pour afficher la page du formulaire de connexion  
         {  
@@ -206,8 +221,28 @@ class Router {
         }  
         else if($routeTab["route"] === "check-connexion") // condition pour l'action du formulaire de connexion  
         {  
-            $this->auth->checkLogin(); // appeler la méthode du controlleur pour vérifier la connexion et renvoyer vers l'accueil  
+            $this->auth->checkLogin($_POST); // appeler la méthode du controlleur pour vérifier la connexion et renvoyer vers l'accueil  
         }
         
     } 
 }
+
+
+        // else if($routeTab["route"] === "creer-un-compte") // condition pour afficher la page du formulaire d'inscription  
+        // {  
+        //     $this->auth->register();// appeler la méthode du controlleur pour afficher la page d'inscription  
+        // }  
+        // else if($routeTab["route"] === "check-creer-un-compte") // condition pour l'action du formulaire d'inscription  
+        // {  
+        //     $this->auth->checkRegister();// appeler la méthode du controlleur pour créer un utilisateur et renvoyer vers l'accueil  
+        // }  
+        // else if($routeTab["route"] === "connexion") // condition pour afficher la page du formulaire de connexion  
+        // {  
+        //     $this->auth->login(); // appeler la méthode du controlleur pour afficher la page d'inscription  
+        // }  
+        // else if($routeTab["route"] === "check-connexion") // condition pour l'action du formulaire de connexion  
+        // {  
+        //     $this->auth->checkLogin(); // appeler la méthode du controlleur pour vérifier la connexion et renvoyer vers l'accueil  
+        // }
+        
+  
