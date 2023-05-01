@@ -38,6 +38,7 @@ nav ul {
 }
 nav ul li {
   font-size: 2rem;
+  font-family: "Creepster", cursive;
 }
 nav ul li a {
   text-decoration: none;

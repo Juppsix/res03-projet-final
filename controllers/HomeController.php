@@ -15,7 +15,9 @@ class HomeController extends AbstractController {
  
   /* Pour la route de la home */  
   public function index() {
-    if ($_SESSION["user"] === "customer" || $_SESSION["user"] === "admin"){
+      
+    // if ($_SESSION["user"] === "customer" || $_SESSION["user"] === "admin"){
+    if (isset($_SESSION["user"]) && ($_SESSION["user"] === "customer" || $_SESSION["user"] === "admin")){
     $this->render("home", [  
     "header" => 'partials/_connect-header.phtml',
     ]);

@@ -1,26 +1,37 @@
+section {
+  background-color: #03001C;
+}
 section h2 {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  color: #dfe0ea;
+  padding-top: 1vh;
+  font-weight: bold;
+  font-family: "Creepster", cursive;
 }
-
-p {
-  text-align: center;
-  font-size: 1.5rem;
+section article {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
-
-ul {
+section article ul {
   justify-content: space-between;
   display: flex;
   grid-column: 2/3;
 }
-
-article {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+section p {
+  text-align: center;
+  font-size: 1rem;
+  color: #dfe0ea;
+  text-decoration: none;
+  font-family: "Creepster", cursive;
 }
 
-.f-li2 a span {
-  width: 48px;
+.f-li2 {
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+.f-li2 a img {
+  width: 2rem;
 }
 
 /*# sourceMappingURL=footer.css.map */

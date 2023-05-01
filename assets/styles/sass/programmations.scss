@@ -30,6 +30,7 @@ header {
   background-color: #03001C;
   width: 100vw;
 }
+
 nav {
   display: grid;
   justify-items: center;
@@ -57,4 +58,8 @@ nav {
 a:hover {
   color: gold;
   border-color: red;
+}
+main {
+    height: 100vh;
+    background-color: white;
 }

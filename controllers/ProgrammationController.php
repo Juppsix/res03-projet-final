@@ -27,7 +27,8 @@ class ProgrammationController extends AbstractController {
     public function programmations() : void  
     {  
         $programmations = $this->pm->getAllProgrammation();  //appel au manager pour récuperer la liste des artistes
-        if ($_SESSION["user"] === "customer" || $_SESSION["user"] === "admin"){
+        // if ($_SESSION["user"] === "customer" || $_SESSION["user"] === "admin"){
+        if (isset($_SESSION["user"]) && ($_SESSION["user"] === "customer" || $_SESSION["user"] === "admin")){
         $this->render("progs", [  
         "programmations" => $programmations,
         "header" => 'partials/_connect-header.phtml',

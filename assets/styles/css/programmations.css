@@ -51,4 +51,9 @@ a:hover {
   border-color: red;
 }
 
+main {
+  height: 100vh;
+  background-color: white;
+}
+
 /*# sourceMappingURL=programmations.css.map */
