@@ -1,8 +1,21 @@
-<link rel="stylesheet" href="assets/styles/css/programmations.css"> 
+<link rel="stylesheet" href="assets/styles/css/style.css"> 
+
 <section class="section1progs">
 <h2 class="h2progs">Programmations</h2>
 <h3 class ="h3progs">Découvrez la programmation des différentes éditions</h3>
 </section>
-<section class="section2progs">
-    
+<section>
+
+<?php foreach($data["programmations"] as $programmation){ ?>
+  <h2>Programmations</h2>
+  <ul>
+
+      <li> <?= $programmation->getName() ?></li>
+      <li><?= $programmation->getDescription() ?></li>
+
+  </ul>
+
+<?php } ?>
+
 </section>
+<section class="section2progs">

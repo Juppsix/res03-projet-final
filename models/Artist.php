@@ -15,6 +15,7 @@ class Artist {
         $this->slug = $slug;
         $this->description = $description;
         $this->price = $price;
+        $this->media = $media;
   
     }  
    public function getId() : int 

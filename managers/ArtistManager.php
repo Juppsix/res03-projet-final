@@ -9,7 +9,7 @@ class ArtistManager extends AbstractManager {
         $list = [];
      foreach ($artists as $artist)
     {
-        $art = new Artist($artist['name'], $artist['slug'], $artist['description'], $artist['price']);
+        $art = new Artist($artist['name'], $artist['slug'], $artist['description'], $artist['price'], $artist['media']);
         $art->setId($artist['id']);
         $list[] = $art;
     }

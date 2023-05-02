@@ -26,7 +26,9 @@ class ProgrammationController extends AbstractController {
           
     public function programmations() : void  
     {  
-        $programmations = $this->pm->getAllProgrammation();  //appel au manager pour récuperer la liste des artistes
+        $programmations = $this->pm->getAllProgrammation();
+        //appel au manager pour récuperer la liste des artistes
+        $programmations=array_reverse($programmations);
         // if ($_SESSION["user"] === "customer" || $_SESSION["user"] === "admin"){
         if (isset($_SESSION["user"]) && ($_SESSION["user"] === "customer" || $_SESSION["user"] === "admin")){
         $this->render("progs", [  
@@ -72,10 +74,10 @@ class ProgrammationController extends AbstractController {
     }
     }
     
-    public function editProgrammation(array $post) : void
+    public function editProgrammation(string $programmationSlug) : void
     {
-        $editProgrammation = new Programmation($post["name"],$post["slug"],$post["description"]);
-        $editedProgrammation = this->pm->editProgrammation($editProgrammation);
+        //$editProgrammation = new Programmation($post["name"],$post["slug"],$post["description"]);
+        //$editedProgrammation = this->pm->editProgrammation($editProgrammation);
         
           $this->render("edit-prog", [  
         "header" => "partials/_admin-header.phtml",

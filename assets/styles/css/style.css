@@ -178,27 +178,27 @@ main {
   color: #03001C;
 }
 
-main {
+.mainregister {
   color: #dfe0ea;
 }
-main .h2register {
+.mainregister .h2register {
   text-align: center;
   font-size: 4rem;
   font-family: "Risque", cursive;
   color: #03001C;
   margin-top: 1vh;
 }
-main .pregister {
+.mainregister .pregister {
   text-align: center;
   font-size: 2rem;
   font-family: "Risque", cursive;
   color: #03001C;
 }
-main .section2register .articleregister {
+.mainregister .section2register .articleregister {
   display: flex;
   justify-content: center;
 }
-main .section2register .articleregister form {
+.mainregister .section2register .articleregister form {
   background-color: pink;
   width: 20vw;
   background-color: #03001C;
@@ -207,13 +207,13 @@ main .section2register .articleregister form {
   height: 52vh;
   box-shadow: rgba(53, 57, 72, 0.8) 5px 5px, rgba(53, 57, 72, 0.6) 10px 10px, rgba(79, 82, 95, 0.4) 15px 15px, rgba(179, 181, 186, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
 }
-main .section2register .articleregister form .h2registerform {
+.mainregister .section2register .articleregister form .h2registerform {
   color: #dfe0ea;
   font-family: "Risque", cursive;
   font-size: 1.6rem;
   font-weight: bold;
 }
-main .section2register .articleregister form .form-label {
+.mainregister .section2register .articleregister form .form-label {
   font-size: 1.2rem;
   color: #dfe0ea;
   font-family: "Risque", cursive;
@@ -221,7 +221,7 @@ main .section2register .articleregister form .form-label {
   display: block;
   font-weight: bold;
 }
-main .section2register .articleregister form .btnregister {
+.mainregister .section2register .articleregister form .btnregister {
   padding: 0.5rem;
   border-radius: 5px;
   font-family: "Risque", cursive;
@@ -231,7 +231,7 @@ main .section2register .articleregister form .btnregister {
   font-size: 1.5rem; /* agrandissement de la taille de police pour le bouton */
   font-weight: bold;
 }
-main .section2register .articleregister form fieldset {
+.mainregister .section2register .articleregister form fieldset {
   margin: 1rem 0;
 }
 

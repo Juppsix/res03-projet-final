@@ -121,6 +121,11 @@ class Router {
                 {
                     $routeAndParams["route"] = $tab[0];
                 }
+                 else if($tab[0] === "edit-prog")
+                {
+                    $routeAndParams["route"] = $tab[0];
+                    $routeAndParams["programmationSlug"] = $tab[1]; 
+                }
                 else if($tab[0] === "check-creer-programmation")
                 {
                     $routeAndParams["route"] = $tab[0];
@@ -154,6 +159,10 @@ class Router {
                     $routeAndParams["route"] = $tab[0];
                 }
                 else if($tab[0] === "404")
+                {
+                    $routeAndParams["route"] = $tab[0];
+                }
+                else if($tab[0] === "informations")
                 {
                     $routeAndParams["route"] = $tab[0];
                 }
@@ -232,7 +241,7 @@ class Router {
             }
              
          }
-         else if($routeTab['route'] === "edit-programmation" && $routeTab['programmationSlug'] !== null)
+         else if($routeTab['route'] === "edit-prog" && $routeTab['programmationSlug'] !== null)
          {
                if ($_SESSION['user'] === "admin") {
              $this->ptrl->editProgrammation($routeTab['programmationSlug']);
@@ -240,7 +249,7 @@ class Router {
                 header('Location: /res03-projet-final');
             }
          }
-         else if($routeTab['route'] === "delete-programmation" && $routeTab['programmationSlug'] !== null)
+         else if($routeTab['route'] === "delete-prog" && $routeTab['programmationSlug'] !== null)
          {
                if ($_SESSION['user'] === "admin") {
                $this->ptrl->deleteProgrammation($routeTab['programmationSlug']);

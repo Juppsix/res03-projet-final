@@ -1,1 +1,16 @@
 <h1>Page de détail d'une progg</h1>
+
+<section>
+
+<?php foreach($data["programmations"] as $programmation){ ?>
+  <h2>Programmations</h2>
+  <ul>
+   
+      <li> <?= $programmation->getName() ?></li>
+      <li><?= $programmation->getDescription() ?></li>
+
+  </ul>
+
+<?php } ?>
+
+</section>

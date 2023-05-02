@@ -16,10 +16,20 @@ class ArtistController extends AbstractController {
     public function artists() : void 
     {
        $artists = $this->am->getAllArtists();  //appel au manager pour récuperer la liste des artistes
-      var_dump($artists);
+      
+       if (isset($_SESSION["user"]) && ($_SESSION["user"] === "customer" || $_SESSION["user"] === "admin")){
         $this->render("artists", [  
-            "artists" => $artists  
-        ]);  
+        "artists" => $artists,
+        "header" => 'partials/_connect-header.phtml',
+        ]);
+         
+        } else {
+    
+        $this->render("artists", [  
+        "artists" => $artists,
+        "header" => "partials/_header.phtml",
+         ]);
+        }  
     }
     
     public function artist() : void
@@ -70,7 +80,7 @@ class ArtistController extends AbstractController {
         echo "Hello World";
         var_dump($post);
         if (isset($post["name"], $post["slug"], $post["description"], $post["price"])) {
-         $editArtist = new Artist($post["name"],$post["slug"],$post["description"], $post["email"], $post["price"]);
+         $editArtist = new Artist($post["name"],$post["slug"],$post["description"],$post["price"]);
         $editedArtist = this->am->editArtist($editArtist);
         
          $this->renderAdmin("edit-artist", [  
