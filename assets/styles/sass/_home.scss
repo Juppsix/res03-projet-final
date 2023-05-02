@@ -1,0 +1,55 @@
+$bg-color: #03001C;
+$text-color: white;
+$nav-font-size: 24px;
+
+
+/* Style the header */
+
+.mainhome {
+  min-height: 100vh;
+  background-color: #dfe0ea;
+  
+  .sectionhome {
+    // background-image: url("https://electro-news.eu/wp-content/uploads/2023/02/time-warp.jpg");
+    background-image: url("https://www.nova.fr/wp-content/uploads/sites/2/2022/05/Kappa-FuturFestival.jpg?fit=2048%2C1152&quality=75");
+    background-size: cover;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+      
+    .h2home{
+    font-size: 6rem;
+    font-family: 'Creepster', cursive;
+    text-align: center;
+    display: grid;
+    grid-row: 2/3;
+    color: gold;
+    transition: transform .1s;
+    }
+    .h3home{
+      font-size: 4rem;
+      font-family: 'Risque', cursive;
+      text-align: center;
+      color: gold;
+      font-weight: bold;
+    }
+  }
+}
+img:hover{
+-ms-transform: scale(1.5); /* IE 9 */
+-webkit-transform: scale(1.5); /* Safari 3-8 */
+transform: scale(1.5);
+
+}
+
+.h2home:hover {
+   color: gold;
+  -ms-transform: scale(2); /* IE 9 */
+  -webkit-transform: scale(2); /* Safari 3-8 */
+   transform: scale(2);
+   text-shadow: red 2px 5px;
+}
+.h3home:hover {
+  color: gold;
+   text-shadow: red 2px 5px;
+}

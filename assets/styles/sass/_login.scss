@@ -4,76 +4,22 @@ $nav-font-size: 24px;
 
 
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
 
-/* Style the header */
-header {
-  background-color: #03001C;
-  width: 100vw;
-}
-nav {
-  display: grid;
-  justify-items: center;
-
-  ul {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-    li {
-      font-size: 2rem;
-
-      a {
-        text-decoration: none;
-        color: #dfe0ea;
-        display: block; /* permet de prendre toute la largeur */
-        padding: 10px; /* ajoute un peu d'espacement */
-      }
-    }
-  }
-}
-
-a:hover {
-  color: gold;
-  border-color: red;
-}
-
-main {
+.mainlogin {
   height: 80vh;
   display: flex; /* ajout pour activer le flexbox */
   justify-content: center; /* centre horizontalement le contenu */
   align-items: center; /* centre verticalement le contenu */
-  background-color: #23292f;
+  background-color: #dfe0ea;
   
-  article {
+  .articlelogin {
     width: 100%; /* ajustement de la largeur du formulaire */
     margin: 0 auto; /* centre horizontalement l'article (le formulaire est inclus) */
     padding: 2rem;
     background-color: #03001C;
-    border-radius: 10px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-     h2 {
+    // border-radius: 10px;
+    box-shadow: rgba(53,57,72,0.8) 5px 5px, rgba(53,57,72,0.6) 10px 10px, rgba(79,82,95,0.4) 15px 15px, rgba(179,181,186, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+     .h2loginform {
        color: #dfe0ea;
        font-family: 'Risque', cursive;
        font-size: 1.6rem;
@@ -108,7 +54,7 @@ main {
     }
   }
 }
-.button1 {
+.buttonlogin {
           padding: 0.5rem;
           border-radius: 5px;
           font-family: 'Risque', cursive;
@@ -118,7 +64,13 @@ main {
           font-size: 1.5rem; /* agrandissement de la taille de police pour le bouton */
           font-weight: bold;
         }
-.button1:hover {
+.buttonlogin:hover {
   background-color: white;
   color: #03001C;
+}
+img:hover{
+-ms-transform: scale(1.5); /* IE 9 */
+-webkit-transform: scale(1.5); /* Safari 3-8 */
+transform: scale(1.5);
+
 }

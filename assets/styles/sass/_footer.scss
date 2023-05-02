@@ -1,6 +1,6 @@
-section {
+.sectionfooter {
     background-color: #03001C;
-    h2 {
+    .h2footer {
         text-align: center;
         font-size: 2rem;
         color: #dfe0ea;
@@ -40,4 +40,8 @@ section {
                          width: 2rem;
                      }
                  }
+}
+.h2footer:hover {
+    color: gold;
+    text-shadow: red 2px 5px;
 }

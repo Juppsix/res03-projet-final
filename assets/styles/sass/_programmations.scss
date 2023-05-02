@@ -1,0 +1,29 @@
+$bg-color: #03001C;
+$text-color: white;
+$nav-font-size: 24px;
+
+main {
+    height: 100vh;
+   background-color: #dfe0ea;
+}
+.section1progs {
+    height: 20vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    .h2progs{
+    font-size: 4rem;
+    display: grid;
+    grid-row: 1/2;
+    text-align: center;
+    font-family: 'Risque', cursive;
+    color: #03001C;
+    }
+    .h3progs{
+    font-size: 2rem;
+    display: grid;
+    grid-row: 2/2;
+    text-align: center;
+    font-family: 'Risque', cursive;
+    color: #03001C;
+    }
+}

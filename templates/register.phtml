@@ -11,9 +11,19 @@
  <!--     </nav>-->
  <!--   </header>-->
 
-<main class="container py-5">  
-    <h2 class="mb-5">Créer un compte</h2>  
-    <form method="post" action="/res03-projet-final/check-creer-un-compte" class="col-4">  
+<main class="container py-5">
+    <section class="section1register">
+    <h2 class="h2register">
+        S'inscrire 
+    </h2>
+    <p class="pregister">
+        pour profiter de la newsletter
+    </p>
+    </section>
+    <section class="section2register">
+        <article class="articleregister">
+    <form method="post" action="/res03-projet-final/check-creer-un-compte" class="col-4"> 
+    <h2 class="h2registerform">Créer un compte</h2> 
         <input type="hidden" name="formName" id="formName" value="registerForm" />  
         <fieldset class="mb-3">  
             <label for="username" class="form-label">  
@@ -39,6 +49,8 @@
             </label>  
             <input type="confirmPassword" name="confirmPassword" id="confirmPassword" class="form-control" required />  
         </fieldset>  
-        <button type="submit" class="btn btn-primary">Créer un compte</button>  
-    </form>  
+        <button type="submit" class="btnregister">Créer un compte</button>  
+    </form>
+    </article>
+    </section>
 </main>

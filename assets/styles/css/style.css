@@ -1,3 +1,310 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+header {
+  background-color: #03001C;
+  width: 100vw;
+}
+
+nav {
+  display: grid;
+  justify-items: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+nav img {
+  transition: transform 0.1s;
+  padding-top: 2vh;
+}
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  font-size: 2rem;
+  font-family: "Creepster", cursive;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #dfe0ea;
+  display: block; /* permet de prendre toute la largeur */
+  padding: 10px; /* ajoute un peu d'espacement */
+}
+
+a:hover {
+  color: gold;
+  text-shadow: red 2px 5px;
+}
+
+img:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5);
+}
+
+/* Style the header */
+.mainhome {
+  min-height: 100vh;
+  background-color: #dfe0ea;
+}
+.mainhome .sectionhome {
+  background-image: url("https://www.nova.fr/wp-content/uploads/sites/2/2022/05/Kappa-FuturFestival.jpg?fit=2048%2C1152&quality=75");
+  background-size: cover;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+.mainhome .sectionhome .h2home {
+  font-size: 6rem;
+  font-family: "Creepster", cursive;
+  text-align: center;
+  display: grid;
+  grid-row: 2/3;
+  color: gold;
+  transition: transform 0.1s;
+}
+.mainhome .sectionhome .h3home {
+  font-size: 4rem;
+  font-family: "Risque", cursive;
+  text-align: center;
+  color: gold;
+  font-weight: bold;
+}
+
+img:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5);
+}
+
+.h2home:hover {
+  color: gold;
+  -ms-transform: scale(2); /* IE 9 */
+  -webkit-transform: scale(2); /* Safari 3-8 */
+  transform: scale(2);
+  text-shadow: red 2px 5px;
+}
+
+.h3home:hover {
+  color: gold;
+  text-shadow: red 2px 5px;
+}
+
+.sectionfooter {
+  background-color: #03001C;
+}
+.sectionfooter .h2footer {
+  text-align: center;
+  font-size: 2rem;
+  color: #dfe0ea;
+  padding-top: 1vh;
+  font-weight: bold;
+  font-family: "Creepster", cursive;
+}
+.sectionfooter article {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.sectionfooter article ul {
+  justify-content: space-between;
+  display: flex;
+  grid-column: 2/3;
+}
+.sectionfooter p {
+  text-align: center;
+  font-size: 1rem;
+  color: #dfe0ea;
+  text-decoration: none;
+  font-family: "Creepster", cursive;
+}
+
+.f-li2 {
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+.f-li2 a img {
+  width: 2rem;
+}
+
+.h2footer:hover {
+  color: gold;
+  text-shadow: red 2px 5px;
+}
+
+main {
+  height: 100vh;
+  background-color: #dfe0ea;
+}
+
+.section1progs {
+  height: 20vh;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+.section1progs .h2progs {
+  font-size: 4rem;
+  display: grid;
+  grid-row: 1/2;
+  text-align: center;
+  font-family: "Risque", cursive;
+  color: #03001C;
+}
+.section1progs .h3progs {
+  font-size: 2rem;
+  display: grid;
+  grid-row: 2/2;
+  text-align: center;
+  font-family: "Risque", cursive;
+  color: #03001C;
+}
+
+main {
+  color: #dfe0ea;
+}
+main .h2register {
+  text-align: center;
+  font-size: 4rem;
+  font-family: "Risque", cursive;
+  color: #03001C;
+  margin-top: 1vh;
+}
+main .pregister {
+  text-align: center;
+  font-size: 2rem;
+  font-family: "Risque", cursive;
+  color: #03001C;
+}
+main .section2register .articleregister {
+  display: flex;
+  justify-content: center;
+}
+main .section2register .articleregister form {
+  background-color: pink;
+  width: 20vw;
+  background-color: #03001C;
+  padding: 2rem;
+  margin-top: 8vh;
+  height: 52vh;
+  box-shadow: rgba(53, 57, 72, 0.8) 5px 5px, rgba(53, 57, 72, 0.6) 10px 10px, rgba(79, 82, 95, 0.4) 15px 15px, rgba(179, 181, 186, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+}
+main .section2register .articleregister form .h2registerform {
+  color: #dfe0ea;
+  font-family: "Risque", cursive;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+main .section2register .articleregister form .form-label {
+  font-size: 1.2rem;
+  color: #dfe0ea;
+  font-family: "Risque", cursive;
+  margin-bottom: 0.2rem;
+  display: block;
+  font-weight: bold;
+}
+main .section2register .articleregister form .btnregister {
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-family: "Risque", cursive;
+  border: none;
+  background-color: #dfe0ea;
+  color: #03001C;
+  font-size: 1.5rem; /* agrandissement de la taille de police pour le bouton */
+  font-weight: bold;
+}
+main .section2register .articleregister form fieldset {
+  margin: 1rem 0;
+}
+
+.buttonregister:hover {
+  background-color: white;
+  color: #03001C;
+}
+
+.mainlogin {
+  height: 80vh;
+  display: flex; /* ajout pour activer le flexbox */
+  justify-content: center; /* centre horizontalement le contenu */
+  align-items: center; /* centre verticalement le contenu */
+  background-color: #dfe0ea;
+}
+.mainlogin .articlelogin {
+  width: 100%; /* ajustement de la largeur du formulaire */
+  margin: 0 auto; /* centre horizontalement l'article (le formulaire est inclus) */
+  padding: 2rem;
+  background-color: #03001C;
+  box-shadow: rgba(53, 57, 72, 0.8) 5px 5px, rgba(53, 57, 72, 0.6) 10px 10px, rgba(79, 82, 95, 0.4) 15px 15px, rgba(179, 181, 186, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+}
+.mainlogin .articlelogin .h2loginform {
+  color: #dfe0ea;
+  font-family: "Risque", cursive;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.mainlogin .articlelogin form {
+  width: 100%;
+}
+.mainlogin .articlelogin form fieldset {
+  margin: 1rem 0;
+}
+.mainlogin .articlelogin form fieldset label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem; /* agrandissement de la taille de police pour les labels */
+  font-family: "Risque", cursive;
+  color: #dfe0ea;
+  font-weight: bold;
+}
+.mainlogin .articlelogin form fieldset input[type=email], .mainlogin .articlelogin form fieldset input[type=password] {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1.2rem; /* agrandissement de la taille de police pour les inputs */
+}
+
+.buttonlogin {
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-family: "Risque", cursive;
+  border: none;
+  background-color: #dfe0ea;
+  color: #03001C;
+  font-size: 1.5rem; /* agrandissement de la taille de police pour le bouton */
+  font-weight: bold;
+}
+
+.buttonlogin:hover {
+  background-color: white;
+  color: #03001C;
+}
+
+img:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5);
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

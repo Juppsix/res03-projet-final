@@ -11,7 +11,7 @@ class AuthController extends AbstractController {
     /* Pour la page d'inscription */  
     public function register() : void  
     {  
-      $this->render("register", []); // render la page avec le formulaire d'inscription  
+      $this->render("register", ['header' => 'partials/_header.phtml']); // render la page avec le formulaire d'inscription  
     }  
       
     /* Pour vérifier l'inscription */  

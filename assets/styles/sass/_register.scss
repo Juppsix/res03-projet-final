@@ -1,0 +1,72 @@
+$bg-color: #03001C;
+$text-color: white;
+$nav-font-size: 24px;
+
+main {
+    color: #dfe0ea;
+    .h2register{
+        text-align: center;
+        font-size: 4rem;
+        font-family: 'Risque', cursive;
+        color: #03001C;
+        margin-top: 1vh;
+    }
+    .pregister {
+        text-align: center;
+        font-size: 2rem;
+        font-family: 'Risque', cursive;
+        color: #03001C;
+    }
+    
+    .section2register {
+       
+        
+        .articleregister {
+           display: flex;
+           justify-content: center;
+        
+        form {
+            background-color: pink;
+            width: 20vw;
+            background-color: #03001C;
+            padding: 2rem;
+            margin-top: 8vh;
+            height: 52vh;
+             box-shadow: rgba(53,57,72,0.8) 5px 5px, rgba(53,57,72,0.6) 10px 10px, rgba(79,82,95,0.4) 15px 15px, rgba(179,181,186, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+           
+            
+            .h2registerform{
+                color: #dfe0ea;
+                font-family: 'Risque', cursive;
+                font-size: 1.6rem;
+                font-weight: bold;
+            }
+            .form-label{
+                font-size: 1.2rem;
+                color: #dfe0ea;
+                font-family: 'Risque', cursive;
+                margin-bottom: 0.2rem;
+                display: block;
+                font-weight: bold;
+            }
+            .btnregister{
+               padding: 0.5rem;
+          border-radius: 5px;
+          font-family: 'Risque', cursive;
+          border: none;
+          background-color: #dfe0ea;
+          color: #03001C;
+          font-size: 1.5rem; /* agrandissement de la taille de police pour le bouton */
+          font-weight: bold;
+            }
+            fieldset {
+                margin: 1rem 0;
+            }
+        }
+    }
+}
+}
+.buttonregister:hover {
+  background-color: white;
+  color: #03001C;
+}

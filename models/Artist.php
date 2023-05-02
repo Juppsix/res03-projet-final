@@ -6,8 +6,9 @@ class Artist {
   private string $slug;
   private string $description;
   private int $price;
+  private string $media;
   
-    public function __construct(string $name, string $slug, string $description, int $price)  
+    public function __construct(string $name, string $slug, string $description, int $price, string $media)  
     {  
        $this->id = null;
         $this->name = $name;
@@ -66,5 +67,14 @@ class Artist {
         $this->price =$price;
     }
   
+   public function getMedia() : string
+    {
+        return $this->media;
+    }
+    
+    public function setMedia(string $media) : void
+    {
+        $this->media =$media;
+    }
   
 }
