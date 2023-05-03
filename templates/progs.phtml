@@ -1,21 +1,26 @@
-<link rel="stylesheet" href="assets/styles/css/style.css"> 
+<!--<link rel="stylesheet" href="assets/styles/css/style.css"> -->
 
 <section class="section1progs">
 <h2 class="h2progs">Programmations</h2>
 <h3 class ="h3progs">Découvrez la programmation des différentes éditions</h3>
 </section>
-<section>
-
-<?php foreach($data["programmations"] as $programmation){ ?>
-  <h2>Programmations</h2>
-  <ul>
-
-      <li> <?= $programmation->getName() ?></li>
-      <li><?= $programmation->getDescription() ?></li>
-
-  </ul>
-
-<?php } ?>
-
-</section>
 <section class="section2progs">
+
+<?php foreach($data["programmations"] as $programmation){?>
+  <h4 class="h4progs"> <?= $programmation->getName() ?></h4>
+  <section class="section3progs">
+  <?php foreach($programmation->getArtists() as $artist){?>
+  <article class="articleprogs">
+            <header class="headerarticle">
+                <h3 class="h3articleartists"><?= $artist->getName();?></h3>
+                <img class="imageArtists" src=<?= $artist->getImg_url()?> alt="Photo de présentation">
+            </header>
+            </article>
+            
+  <?php } ?>
+  </section>
+  <?php
+  } 
+  ?>
+</section>
+

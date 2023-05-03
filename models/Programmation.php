@@ -5,6 +5,7 @@ class Programmation {
   private string $name;
   private string $slug;
   private string $description;
+  private array $artists;
   
     public function __construct(string $name, string $slug, string $description)  
     {  
@@ -12,6 +13,7 @@ class Programmation {
         $this->name = $name;
         $this->slug = $slug;
         $this->description = $description;
+        $this->artists = [];
     }  
   
    public function getId() : int 
@@ -52,6 +54,16 @@ class Programmation {
     public function setDescription(string $password) : void
     {
         $this->description =$description;
+    }
+    
+      public function getArtists() : array
+    {
+        return $this->artists;
+    }
+    
+    public function setArtists(array $artists) : void
+    {
+        $this->artists =$artists;
     }
     
     

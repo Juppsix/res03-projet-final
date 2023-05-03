@@ -57,14 +57,14 @@ class ArtistController extends AbstractController {
 {
        echo "Hello World";
         var_dump($post);
-    if (isset($post["name"], $post["slug"], $post["description"], $post["price"])) {
-        $newArtist =  new Artist($post["name"],$post["slug"],$post["description"],$post["price"]);
+        
+    if (isset($post["name"]) && isset($post["slug"]) && isset($post["description"]) && isset($post["price"])) {
+        $uploader = new Uploader();
+            $media = $uploader->upload($_FILES, "image");
+        $newArtist =  new Artist($post["name"],$post["slug"],$post["description"],$post["price"],$media);
         $createdArtist = $this->am->createArtist($newArtist);
         $this->renderAdmin("create-artist", [
-            "name" => $createdArtist->getName(),
-            "slug" => $createdArtist->getSlug(),
-            "description" => $createdArtist->getDescription(),
-            "price" => $createdArtist->getPrice(),
+            "artist" => $createdArtist,
             "header" => "partials/_admin-header.phtml",
         ]);
     } else {

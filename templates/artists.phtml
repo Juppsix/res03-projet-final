@@ -1,25 +1,18 @@
-<h1>Ceci est la page des artistes</h1>
-<section class="section1">
-<h2 class="h2artists">Artistes</h2>   
-<h3 class ="h3p">Découvrez les artistes de l'édition 2023</h3>
-</section>
+<h2 class="h2artists">Artistes</h2>
+<section class="section1artists">
+<!--<h2 class="h2artists">Artistes</h2>   -->
+<!--<h3 class ="h3p">Découvrez les artistes de l'édition 2023</h3>-->
 
-<section>
-    <?php foreach($data["artists"] as $artist){ ?>
-    
-    <h2>Artistes</h2>
-  <ul>
-
-      <li> <?= $artist->getName() ?></li>
-      <li><?= $artist->getDescription() ?></li>
-       <li>
-           <figure>
-            <img src="/res03-projet-final/<?= $artist->getMedia(); ?>" alt="photo de l'image en présentation">
-            </figure>
-
-           </li>
-  </ul>
-
-<?php } ?>
-    
+        <?php
+        foreach($data['artists'] as $artist)
+        { ?>
+        <a href="/res03-projet-final/artists/<?= $artist->getSlug(); ?>" >
+        <article class="articleartists">
+            <header class="headerarticle">
+                <h3 class="h3articleartists"><?= $artist->getName(); ?></h3>
+                <img src=<?= $artist->getImg_url()?> alt="Photo de présentation">
+            </header>
+            </article>
+        </a>
+     <?php } ?>
 </section>

@@ -9,7 +9,7 @@ class ArtistManager extends AbstractManager {
         $list = [];
      foreach ($artists as $artist)
     {
-        $art = new Artist($artist['name'], $artist['slug'], $artist['description'], $artist['price'], $artist['media']);
+        $art = new Artist($artist['name'], $artist['slug'], $artist['description'], $artist['price'], $artist['img_url']);
         $art->setId($artist['id']);
         $list[] = $art;
     }
@@ -33,9 +33,9 @@ class ArtistManager extends AbstractManager {
         return $artist;
     }
 
-    public function getArtisteByProgrammationSlug(string $programationSlug) : array
+    public function getArtistByProgrammationSlug(string $programmationSlug) : array
     {
-        $query = $this->db->prepare('SELECT artists.* FROM artists_programmation JOIN artists ON artists_programmation.artists_id = artists.id JOIN programmation ON artists_programmation.programmation_id = programmation.id WHERE programmation.slug =:slug');
+        $query = $this->db->prepare('SELECT artists.* FROM artist_programmation JOIN artists ON artist_programmation.artist_id = artists.id JOIN programmation ON artist_programmation.prog_id = programmation.id WHERE programmation.slug =:slug');
 
         $parameters = [
             'slug' => $programmationSlug
@@ -47,8 +47,8 @@ class ArtistManager extends AbstractManager {
 
         foreach ($artists as $artist)
     {
-        $art = new Artist($artist['name'], $artist['slug'], $artist['description'], $artist['price']);
-        $art->setId($product['id']);
+        $art = new Artist($artist['name'], $artist['slug'], $artist['description'], $artist['price'], $artist['img_url']);
+        $art->setId($artist['id']);
         $list[] = $art;
     }
         return $list;

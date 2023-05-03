@@ -6,16 +6,16 @@ class Artist {
   private string $slug;
   private string $description;
   private int $price;
-  private string $media;
+  private string $img_url;
   
-    public function __construct(string $name, string $slug, string $description, int $price, string $media)  
+    public function __construct(string $name, string $slug, string $description, int $price, string $img_url)  
     {  
        $this->id = null;
         $this->name = $name;
         $this->slug = $slug;
         $this->description = $description;
         $this->price = $price;
-        $this->media = $media;
+        $this->img_url = $img_url;
   
     }  
    public function getId() : int 
@@ -68,14 +68,14 @@ class Artist {
         $this->price =$price;
     }
   
-   public function getMedia() : string
+   public function getImg_url() : string
     {
-        return $this->media;
+        return $this->img_url;
     }
     
-    public function setMedia(string $media) : void
+    public function setImg_url(string $img_url) : void
     {
-        $this->media =$media;
+        $this->img_url =$img_url;
     }
   
 }

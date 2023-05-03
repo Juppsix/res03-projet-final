@@ -4,6 +4,7 @@
 @import "home.scss";
 @import "footer.scss";
 @import "programmations.scss";
+@import "artists.scss";
 @import "register.scss";
 @import "login.scss";
 // Creepster pour le logo 
@@ -21,7 +22,8 @@
     white-space: nowrap;
     border-width: 0;
 }
-// main {
-//     height: 100vh;
-// }
+main {
+    min-height: 100vh;
+   background-color: #dfe0ea;
+}
 

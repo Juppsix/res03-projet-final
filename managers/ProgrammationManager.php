@@ -6,7 +6,7 @@ class ProgrammationManager extends AbstractManager {
     {  
         $list = [];  
       
-       $query = $this->db->prepare('SELECT * FROM programmation'); // Pour accéder à la base de données utilisez $this->db  
+       $query = $this->db->prepare('SELECT * FROM programmation ORDER by id DESC'); // Pour accéder à la base de données utilisez $this->db  
        $query->execute();
        $programmation = $query->fetchAll(PDO::FETCH_ASSOC);
        $prog = [];

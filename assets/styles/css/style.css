@@ -29,7 +29,7 @@ nav {
   justify-items: center;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-nav img {
+nav .imgheader {
   transition: transform 0.1s;
   padding-top: 2vh;
 }
@@ -50,31 +50,26 @@ nav ul li a {
   display: block; /* permet de prendre toute la largeur */
   padding: 10px; /* ajoute un peu d'espacement */
 }
-
-a:hover {
+nav ul li a:hover {
   color: gold;
   text-shadow: red 2px 5px;
 }
 
-img:hover {
+.imgheader:hover {
   -ms-transform: scale(1.5); /* IE 9 */
   -webkit-transform: scale(1.5); /* Safari 3-8 */
   transform: scale(1.5);
 }
 
 /* Style the header */
-.mainhome {
-  min-height: 100vh;
-  background-color: #dfe0ea;
-}
-.mainhome .sectionhome {
+.sectionhome {
   background-image: url("https://www.nova.fr/wp-content/uploads/sites/2/2022/05/Kappa-FuturFestival.jpg?fit=2048%2C1152&quality=75");
   background-size: cover;
   height: 100vh;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
 }
-.mainhome .sectionhome .h2home {
+.sectionhome .h2home {
   font-size: 6rem;
   font-family: "Creepster", cursive;
   text-align: center;
@@ -83,18 +78,12 @@ img:hover {
   color: gold;
   transition: transform 0.1s;
 }
-.mainhome .sectionhome .h3home {
+.sectionhome .h3home {
   font-size: 4rem;
   font-family: "Risque", cursive;
   text-align: center;
   color: gold;
   font-weight: bold;
-}
-
-img:hover {
-  -ms-transform: scale(1.5); /* IE 9 */
-  -webkit-transform: scale(1.5); /* Safari 3-8 */
-  transform: scale(1.5);
 }
 
 .h2home:hover {
@@ -151,11 +140,6 @@ img:hover {
   text-shadow: red 2px 5px;
 }
 
-main {
-  height: 100vh;
-  background-color: #dfe0ea;
-}
-
 .section1progs {
   height: 20vh;
   display: grid;
@@ -178,27 +162,132 @@ main {
   color: #03001C;
 }
 
-.mainregister {
-  color: #dfe0ea;
+.section2progs h4 {
+  font-size: 1.6rem;
+  font-family: "Risque", cursive;
+  color: #03001C;
 }
-.mainregister .h2register {
+
+.section3progs {
+  display: flex;
+  justify-content: center;
+  gap: 5vw;
+  margin-right: 2vw;
+}
+.section3progs .headerarticle {
+  width: 20vw;
+  background-color: #dfe0ea;
+}
+.section3progs .headerarticle .h3articleartists {
+  text-decoration: none;
+  width: 25vw;
+  margin-bottom: 1vh;
+  text-decoration: none;
+  font-family: "Risque", cursive;
+  font-size: 1.6rem;
+  color: #03001C;
+}
+.section3progs .headerarticle .h3articleartists:hover {
+  color: gold;
+  text-shadow: red 2px 2px;
+}
+
+.imageArtists {
+  width: 22vw;
+  height: 40vh;
+  display: block;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: transform 0.1s;
+}
+
+img:hover {
+  ms-transform: scale(1.2); /* IE 9 */
+  -webkit-transform: scale(1.2); /* Safari 3-8 */
+  transform: scale(1.2);
+}
+
+.h2artists {
+  text-align: center;
+  font-size: 4rem;
+  font-family: "Risque", cursive;
+  color: #03001C;
+}
+
+.h2artists:hover {
+  color: gold;
+  text-shadow: red 2px 5px;
+}
+
+.section1artists {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  text-align: center;
+  row-gap: 3vh;
+  padding-bottom: 6vh;
+}
+.section1artists a {
+  display: flex;
+  justify-content: center;
+  margin-right: 6vw;
+  text-decoration: none;
+}
+.section1artists a .articleartists {
+  width: 20vw;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.section1artists a .articleartists .headerarticle {
+  width: 20vw;
+  background-color: #dfe0ea;
+}
+.section1artists a .articleartists .headerarticle .h3articleartists {
+  text-decoration: none;
+  width: 25vw;
+  margin-bottom: 1vh;
+  text-decoration: none;
+  font-family: "Risque", cursive;
+  font-size: 1.6rem;
+  color: #03001C;
+}
+.section1artists a .articleartists .headerarticle .h3articleartists:hover {
+  color: gold;
+  text-shadow: red 2px 2px;
+}
+.section1artists a .articleartists .headerarticle img {
+  width: 25vw;
+  height: 40vh;
+  display: block;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: transform 0.1s;
+}
+.section1artists a .articleartists .headerarticle img:hover {
+  ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1);
+}
+
+.h2register {
   text-align: center;
   font-size: 4rem;
   font-family: "Risque", cursive;
   color: #03001C;
   margin-top: 1vh;
 }
-.mainregister .pregister {
+
+.pregister {
   text-align: center;
   font-size: 2rem;
   font-family: "Risque", cursive;
   color: #03001C;
 }
-.mainregister .section2register .articleregister {
+
+.section2register .articleregister {
   display: flex;
   justify-content: center;
 }
-.mainregister .section2register .articleregister form {
+.section2register .articleregister form {
   background-color: pink;
   width: 20vw;
   background-color: #03001C;
@@ -207,13 +296,13 @@ main {
   height: 52vh;
   box-shadow: rgba(53, 57, 72, 0.8) 5px 5px, rgba(53, 57, 72, 0.6) 10px 10px, rgba(79, 82, 95, 0.4) 15px 15px, rgba(179, 181, 186, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
 }
-.mainregister .section2register .articleregister form .h2registerform {
+.section2register .articleregister form .h2registerform {
   color: #dfe0ea;
   font-family: "Risque", cursive;
   font-size: 1.6rem;
   font-weight: bold;
 }
-.mainregister .section2register .articleregister form .form-label {
+.section2register .articleregister form .form-label {
   font-size: 1.2rem;
   color: #dfe0ea;
   font-family: "Risque", cursive;
@@ -221,7 +310,7 @@ main {
   display: block;
   font-weight: bold;
 }
-.mainregister .section2register .articleregister form .btnregister {
+.section2register .articleregister form .btnregister {
   padding: 0.5rem;
   border-radius: 5px;
   font-family: "Risque", cursive;
@@ -231,7 +320,7 @@ main {
   font-size: 1.5rem; /* agrandissement de la taille de police pour le bouton */
   font-weight: bold;
 }
-.mainregister .section2register .articleregister form fieldset {
+.section2register .articleregister form fieldset {
   margin: 1rem 0;
 }
 
@@ -299,12 +388,6 @@ main {
   color: #03001C;
 }
 
-img:hover {
-  -ms-transform: scale(1.5); /* IE 9 */
-  -webkit-transform: scale(1.5); /* Safari 3-8 */
-  transform: scale(1.5);
-}
-
 .sr-only {
   position: absolute;
   width: 1px;
@@ -315,6 +398,11 @@ img:hover {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+main {
+  min-height: 100vh;
+  background-color: #dfe0ea;
 }
 
 /*# sourceMappingURL=style.css.map */

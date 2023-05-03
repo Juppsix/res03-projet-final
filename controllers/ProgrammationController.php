@@ -27,9 +27,17 @@ class ProgrammationController extends AbstractController {
     public function programmations() : void  
     {  
         $programmations = $this->pm->getAllProgrammation();
+        
         //appel au manager pour récuperer la liste des artistes
-        $programmations=array_reverse($programmations);
-        // if ($_SESSION["user"] === "customer" || $_SESSION["user"] === "admin"){
+        foreach($programmations as $programmation){
+            $programmation->setArtists(
+                $this->am->getArtistByProgrammationSlug($programmation->getSlug())
+            );
+        }
+       
+            
+/*        $programmations=array_reverse($programmations);
+*/        // if ($_SESSION["user"] === "customer" || $_SESSION["user"] === "admin"){
         if (isset($_SESSION["user"]) && ($_SESSION["user"] === "customer" || $_SESSION["user"] === "admin")){
         $this->render("progs", [  
         "programmations" => $programmations,

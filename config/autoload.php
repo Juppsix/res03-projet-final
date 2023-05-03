@@ -4,6 +4,9 @@
 require "models/Programmation.php";  
 require "models/Artist.php"; 
 require "models/User.php";
+require "models/Media.php";
+require "models/RandomStringGenerator.php";
+require "models/Uploader.php";
   
 // managers  
 require "managers/AbstractManager.php";  

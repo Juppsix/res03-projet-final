@@ -1,0 +1,64 @@
+.h2artists{
+    text-align: center;
+    font-size: 4rem;
+    font-family: 'Risque', cursive;
+    color: #03001C;
+}
+.h2artists:hover {
+   color: gold;
+   text-shadow: red 2px 5px;
+}
+
+// main {
+//   height: 210vh;
+.section1artists{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    text-align: center;
+    row-gap: 3vh;
+    padding-bottom: 6vh;
+    a {
+        display: flex;
+        justify-content: center;
+        margin-right: 6vw;
+        text-decoration: none;
+        
+    .articleartists {
+        
+        width: 20vw;
+        grid-template-columns: 1fr 1fr 1fr;
+        
+        .headerarticle {
+            width: 20vw;
+            background-color: #dfe0ea;
+            .h3articleartists {
+                text-decoration: none;
+                width: 25vw;
+                margin-bottom: 1vh;
+                text-decoration: none;
+                font-family: 'Risque', cursive;
+                font-size: 1.6rem;
+                color: #03001C;
+            }
+            .h3articleartists:hover {
+                 color: gold;
+                 text-shadow: red 2px 2px;
+            }
+            img {
+                width: 25vw;
+                height: 40vh;
+                display: block;
+                justify-content: center;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                transition: transform .1s;
+            }
+            img:hover {
+               ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+   transform: scale(1.1); 
+            }
+        }
+    }
+    }
+}

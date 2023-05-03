@@ -201,6 +201,7 @@ class Router {
         else if($routeTab['route'] === "create-artist")
          {
             if ($_SESSION['user'] === "admin") {
+                
                   $this->atrl->createArtist($_POST);
             } else {
                 header('Location: /res03-projet-final');

@@ -7,7 +7,7 @@ nav {
   justify-items: center;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   
-  img {
+  .imgheader {
   transition: transform .1s;
   padding-top: 2vh;
 }
@@ -27,15 +27,14 @@ nav {
         display: block; /* permet de prendre toute la largeur */
         padding: 10px; /* ajoute un peu d'espacement */
       }
+      a:hover {
+        color: gold;
+        text-shadow: red 2px 5px;
+   }
     }
   }
 }
-
-a:hover {
-  color: gold;
-  text-shadow: red 2px 5px;
-}
-img:hover{
+.imgheader:hover{
 -ms-transform: scale(1.5); /* IE 9 */
 -webkit-transform: scale(1.5); /* Safari 3-8 */
 transform: scale(1.5);
