@@ -40,3 +40,146 @@ nav {
 transform: scale(1.5);
 
 }
+
+@media(max-width: 359px) {
+  
+  header {
+  background-color: #03001C;
+  width: 100vw;
+}
+nav {
+  display: grid;
+  justify-items: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  
+  .imgheader {
+  transition: transform .1s;
+  padding-top: 2vh;
+}
+  ul {
+    display: flex;
+    gap: 5px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      font-size: 0.2rem;
+      font-family: 'Creepster', cursive;
+      a {
+        text-decoration: none;
+        color: #dfe0ea;
+        display: block; /* permet de prendre toute la largeur */
+        padding: 10px; /* ajoute un peu d'espacement */
+      }
+      a:hover {
+        color: gold;
+        text-shadow: red 2px 5px;
+   }
+    }
+  }
+}
+.imgheader:hover{
+-ms-transform: scale(1.5); /* IE 9 */
+-webkit-transform: scale(1.5); /* Safari 3-8 */
+transform: scale(1.5);
+
+}
+}
+
+
+@media(min-width: 360px) and (max-width: 719px) {
+
+header {
+  background-color: #03001C;
+  width: 100vw;
+}
+nav {
+  display: grid;
+  justify-items: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  
+  .imgheader {
+  transition: transform .1s;
+  padding-top: 2vh;
+}
+  ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      font-size: 0.6rem;
+      font-family: 'Creepster', cursive;
+      a {
+        text-decoration: none;
+        color: #dfe0ea;
+        display: block; /* permet de prendre toute la largeur */
+        padding: 10px; /* ajoute un peu d'espacement */
+      }
+      a:hover {
+        color: gold;
+        text-shadow: red 2px 5px;
+   }
+    }
+  }
+}
+.imgheader:hover{
+-ms-transform: scale(1.5); /* IE 9 */
+-webkit-transform: scale(1.5); /* Safari 3-8 */
+transform: scale(1.5);
+
+}
+}
+
+@media(min-width: 720px) {
+
+}
+
+@media (orientation: landscape) {
+  
+  header {
+  background-color: #03001C;
+  width: 100vw;
+}
+nav {
+  display: grid;
+  justify-items: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  
+  .imgheader {
+  transition: transform .1s;
+  padding-top: 2vh;
+}
+  ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      font-size: 0.6rem;
+      font-family: 'Creepster', cursive;
+      a {
+        text-decoration: none;
+        color: #dfe0ea;
+        display: block; /* permet de prendre toute la largeur */
+        padding: 10px; /* ajoute un peu d'espacement */
+      }
+      a:hover {
+        color: gold;
+        text-shadow: red 2px 5px;
+   }
+    }
+  }
+}
+.imgheader:hover{
+-ms-transform: scale(1.5); /* IE 9 */
+-webkit-transform: scale(1.5); /* Safari 3-8 */
+transform: scale(1.5);
+
+}
+}

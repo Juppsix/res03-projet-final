@@ -117,7 +117,7 @@ class Router {
                  else if($tab[0] === "edit-prog")
                 {
                     $routeAndParams["route"] = $tab[0];
-                    $routeAndParams["programmationSlug"] = $tab[1]; 
+                    // $routeAndParams["programmationSlug"] = $tab[1]; 
                 }
                 else if($tab[0] === "check-creer-programmation")
                 {

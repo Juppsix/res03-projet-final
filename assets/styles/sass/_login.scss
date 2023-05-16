@@ -68,3 +68,144 @@ $nav-font-size: 24px;
   background-color: white;
   color: #03001C;
 }
+@media(max-width: 359px) {
+
+}
+
+@media(min-width: 360px) and (max-width: 719px) {
+.mainlogin {
+  height: 80vh;
+  display: flex; /* ajout pour activer le flexbox */
+  justify-content: center; /* centre horizontalement le contenu */
+  align-items: center; /* centre verticalement le contenu */
+  background-color: #dfe0ea;
+  
+  .articlelogin {
+    width: 60%; /* ajustement de la largeur du formulaire */
+    margin: 0 auto; /* centre horizontalement l'article (le formulaire est inclus) */
+    padding: 2rem;
+    background-color: #03001C;
+    margin-top: 4vh;
+    // border-radius: 10px;
+    box-shadow: rgba(53,57,72,0.8) 5px 5px, rgba(53,57,72,0.6) 10px 10px, rgba(79,82,95,0.4) 15px 15px, rgba(179,181,186, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+     .h2loginform {
+       color: #dfe0ea;
+       font-family: 'Risque', cursive;
+       font-size: 1.6rem;
+       font-weight: bold;
+     }
+    
+    form {
+      width: 100%;
+      
+      fieldset {
+        margin: 1rem 0;
+        
+        label {
+          display: block;
+          margin-bottom: 0.5rem;
+          font-size: 1.2rem;/* agrandissement de la taille de police pour les labels */
+          font-family: 'Risque', cursive;
+          color: #dfe0ea;
+          font-weight: bold;
+        }
+        
+        input[type="email"], input[type="password"] {
+          display: block;
+          width: 100%;
+          padding: 0.5rem;
+          border-radius: 5px;
+          border: 1px solid #ccc;
+          font-size: 1.2rem; /* agrandissement de la taille de police pour les inputs */
+        }
+        
+      }
+    }
+  }
+}
+.buttonlogin {
+          padding: 0.5rem;
+          border-radius: 5px;
+          font-family: 'Risque', cursive;
+          border: none;
+          background-color: #dfe0ea;
+          color: #03001C;
+          font-size: 1.5rem; /* agrandissement de la taille de police pour le bouton */
+          font-weight: bold;
+        }
+.buttonlogin:hover {
+  background-color: white;
+  color: #03001C;
+}
+}
+
+@media(min-width: 720px) {
+
+}
+
+@media (orientation: landscape) {
+  .mainlogin {
+  height: 94vh;
+  display: flex; /* ajout pour activer le flexbox */
+  justify-content: center; /* centre horizontalement le contenu */
+  align-items: center; /* centre verticalement le contenu */
+  background-color: #dfe0ea;
+  
+  .articlelogin {
+    // width: 50%; /* ajustement de la largeur du formulaire */
+    margin: 0 auto; /* centre horizontalement l'article (le formulaire est inclus) */
+    padding: 2rem;
+    background-color: #03001C;
+    margin-top: 4vh;
+    // border-radius: 10px;
+    box-shadow: rgba(53,57,72,0.8) 5px 5px, rgba(53,57,72,0.6) 10px 10px, rgba(79,82,95,0.4) 15px 15px, rgba(179,181,186, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+     .h2loginform {
+       color: #dfe0ea;
+       font-family: 'Risque', cursive;
+       font-size: 1.6rem;
+       font-weight: bold;
+     }
+    
+    form {
+      width: 80%;
+      
+      fieldset {
+        margin: 1rem 0;
+        
+        label {
+          display: block;
+          margin-bottom: 0.5rem;
+          font-size: 1.2rem;/* agrandissement de la taille de police pour les labels */
+          font-family: 'Risque', cursive;
+          color: #dfe0ea;
+          font-weight: bold;
+        }
+        
+        input[type="email"], input[type="password"] {
+          display: block;
+          width: 100%;
+          padding: 0.5rem;
+          border-radius: 5px;
+          border: 1px solid #ccc;
+          font-size: 1.2rem; /* agrandissement de la taille de police pour les inputs */
+        }
+        
+      }
+    }
+  }
+}
+.buttonlogin {
+          padding: 0.5rem;
+          border-radius: 5px;
+          font-family: 'Risque', cursive;
+          border: none;
+          background-color: #dfe0ea;
+          color: #03001C;
+          font-size: 1.5rem; /* agrandissement de la taille de police pour le bouton */
+          font-weight: bold;
+        }
+.buttonlogin:hover {
+  background-color: white;
+  color: #03001C;
+}
+}
