@@ -65,7 +65,7 @@ class ProgrammationController extends AbstractController {
     {
         
         if (isset($post["name"], $post["slug"], $post["description"])) {
-        $newProgrammation =  new Programmation($post["name"],$post["slug"],$post["description"]);
+        $newProgrammation =  new Programmation($this->clean($post["name"]),$this->clean($post["slug"]),$this->clean($post["description"]));
          $createProgrammation = $this->pm->createProgrammation($newProgrammation);
          
            $this->render("create-prog", [  

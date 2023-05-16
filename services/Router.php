@@ -25,18 +25,11 @@ class Router {
             {  
                 $tab = explode("/", $route);  
           
-                if($tab[0] === "programmations") // écrire une condition pour le cas où la route commence par "categories"  
+                if($tab[0] === "programmations") // écrire une condition pour le cas où la route commence par "programmations"  
                 {  
                     // mettre les bonnes valeurs dans le tableau  
                     $routeAndParams["route"] = "programmations";  
                 }  
-                // else if($tab[0] === "programmation" && isset($tab[1])) // écrire une condition pour le cas où la route commence par "produits"  
-                // {  
-                //     // mettre les bonnes valeurs dans le tableau  
-                //     $routeAndParams["route"] = "programmation";
-                //     $routeAndParams["programmationSlug"] = $tab[1]; 
-                    
-                // }
                 
                 else if($tab[0] === "programmation" && isset($tab[1]))  
 {  

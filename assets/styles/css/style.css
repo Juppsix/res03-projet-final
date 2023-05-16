@@ -153,6 +153,10 @@ nav ul li a:hover {
   font-family: "Risque", cursive;
   color: #03001C;
 }
+.section1progs .h2progs:hover {
+  color: gold;
+  text-shadow: red 2px 2px;
+}
 .section1progs .h3progs {
   font-size: 2rem;
   display: grid;
@@ -160,6 +164,10 @@ nav ul li a:hover {
   text-align: center;
   font-family: "Risque", cursive;
   color: #03001C;
+}
+.section1progs .h3progs:hover {
+  color: gold;
+  text-shadow: red 2px 2px;
 }
 
 .section2progs h4 {
@@ -173,6 +181,7 @@ nav ul li a:hover {
   justify-content: center;
   gap: 5vw;
   margin-right: 2vw;
+  padding-bottom: 6vh;
 }
 .section3progs .headerarticle {
   width: 20vw;
@@ -193,7 +202,7 @@ nav ul li a:hover {
 }
 
 .imageArtists {
-  width: 22vw;
+  width: 21vw;
   height: 40vh;
   display: block;
   justify-content: center;

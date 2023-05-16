@@ -27,9 +27,9 @@ class AuthController extends AbstractController {
         )
         {// vérifier que le formulaire a été soumis
         
-        $username = $post['username'];
-        $email = $post['email'];   // récupérer les champs du formulaire  
-        $password = $post['password'];
+        $username = $this->clean($post['username']);
+        $email = $this->clean($post['email']);   // récupérer les champs du formulaire  
+        $password = $this->clean($post['password']);
         $role = "customer";
           
         $password_hash = password_hash($password, PASSWORD_DEFAULT);    // chiffrer le mot de passe    
@@ -65,8 +65,8 @@ class AuthController extends AbstractController {
         && isset($post["email"])&&!empty($post["email"])
         && isset($post["password"])&&!empty($post["password"])
        ){ // vérifier que le formulaire a été soumis  
-            $email = $post['email'];   // récupérer les champs du formulaire  
-            $password = $post['password'];
+            $email = $this->clean($post['email']);   // récupérer les champs du formulaire  
+            $password = $this->clean($post['password']);
             $user = $this->um->getUserByEmail($email); // si il existe, vérifier son mot de passe    
         
             if ($user) 
