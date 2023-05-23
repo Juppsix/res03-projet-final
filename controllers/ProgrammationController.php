@@ -84,14 +84,25 @@ class ProgrammationController extends AbstractController {
     
     public function editProgrammation(string $programmationSlug) : void
     {
-        //$editProgrammation = new Programmation($post["name"],$post["slug"],$post["description"]);
-        //$editedProgrammation = this->pm->editProgrammation($editProgrammation);
         
-          $this->render("edit-prog", [  
-        "header" => "partials/_admin-header.phtml",
-         ]);   
+            if (isset($post["name"], $post["slug"], $post["description"])) {
+         $editProgrammation = new Programmation($this->clean($post["name"]),$this->clean($post["slug"]),$this->clean($post["description"]));
+        $editedProgrammation = this->pm->editProgrammation($editProgrammation);
+        
+         $this->renderAdmin("edit-artist", [  
+             "name" => $editedProgrammation->getName(),
+            "slug" => $editedProgrammation->getSlug(),
+            "description" => $editedProgrammation->getDescription(),
+            "header" => "partials/_admin-header.phtml",
+       
+         ]);
+         
+    } else {
+        $this->renderAdmin("edit-prog", [
+            "header" => "partials/_admin-header.phtml"
+            ]);
     }
-    
+    }
     public function deleteProgrammation(array $post) : void 
     {
         $deleteProgrammation = newProgrammation($post["name"],$post["slug"],$post["description"]);

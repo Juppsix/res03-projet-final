@@ -78,12 +78,12 @@ class ArtistController extends AbstractController {
     public function editArtist(string $artistSlug) : void 
     {
         echo "Hello World";
-        var_dump($post);
         if (isset($post["name"], $post["slug"], $post["description"], $post["price"])) {
          $editArtist = new Artist($this->clean($post["name"]),$this->clean($post["slug"]),$this->clean($post["description"]),$this->clean($post["price"]));
         $editedArtist = this->am->editArtist($editArtist);
         
          $this->renderAdmin("edit-artist", [  
+             "artistSlug" => $artistSlug,
              "name" => $editedArtist->getName(),
             "slug" => $editedArtist->getSlug(),
             "description" => $editedArtist->getDescription(),
@@ -94,10 +94,16 @@ class ArtistController extends AbstractController {
          
     } else {
         $this->renderAdmin("edit-artist", [
+           
             "header" => "partials/_admin-header.phtml"
             ]);
     }
     }
+    
+    
+
+
+
     
      public function deleteArtist(string $artistSlug) : void 
     {

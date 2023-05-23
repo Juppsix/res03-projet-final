@@ -138,8 +138,10 @@ transform: scale(1.5);
 
 }
 
-@media (orientation: landscape) {
-  
+
+@media screen and (orientation:landscape)
+and (min-device-width: 360px) 
+and (max-device-width: 905px) {
   header {
   background-color: #03001C;
   width: 100vw;
@@ -172,7 +174,7 @@ nav {
       a:hover {
         color: gold;
         text-shadow: red 2px 5px;
-   }
+  }
     }
   }
 }

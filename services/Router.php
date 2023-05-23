@@ -117,7 +117,12 @@ class Router {
                  else if($tab[0] === "edit-prog")
                 {
                     $routeAndParams["route"] = $tab[0];
-                    // $routeAndParams["programmationSlug"] = $tab[1]; 
+                    $routeAndParams["programmationSlug"] = $tab[0]; 
+                }
+                 else if($tab[0] === "edit-artist")
+                {
+                    $routeAndParams["route"] = $tab[0];
+                    $routeAndParams["artistSlug"] = $tab[0]; 
                 }
                 else if($tab[0] === "check-creer-programmation")
                 {
@@ -237,7 +242,7 @@ class Router {
          }
          else if($routeTab['route'] === "edit-prog" && $routeTab['programmationSlug'] !== null)
          {
-               if ($_SESSION['user'] === "admin") {
+              if ($_SESSION['user'] === "admin") {
              $this->ptrl->editProgrammation($routeTab['programmationSlug']);
             } else {
                 header('Location: /res03-projet-final');

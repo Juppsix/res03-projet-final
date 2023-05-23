@@ -1,14 +1,20 @@
+<?php var_dump($data) ?>
 <h1>Ceci est la page pour modif un artist</h1>
-
-<form action="/edit-artist" method="post">
-    <input type="hidden" name="artist_id" value="<?php echo $artist['id']; ?>">
-    <label for="name">Nom de l'artiste:</label>
-    <input type="text" name="name" value="<?php echo $artist['name']; ?>"><br>
-    <label for="slug">Slug:</label>
-    <input type="text" name="slug" value="<?php echo $artist['slug']; ?>"><br>
-    <label for="description">Description:</label>
-    <textarea name="description"><?php echo $artist['description']; ?></textarea><br>
-    <label for="price">Prix:</label>
-    <input type="number" name="price" value="<?php echo $artist['price']; ?>"><br>
-    <input type="submit" value="Mettre à jour">
-</form>
+  <form action="/res03-projet-final/edit-artist/<?= $data["edit-artist"]->getSlug(); ?>" method="post" >
+      <label for="id">ID</label>
+            <input type="text" name="id" id="id" readonly value="<?= $data["edit-artist"]->getId(); ?>">
+      <label for="name">Nom du produit :</label>
+            <input type="text" name="name" id="name" required value="<?= $data["edit-artist"]->getName(); ?>">
+      <label for="description">Description :</label>
+            <textarea name="description" id="description"><?= $data["edit-artist"]->getDescription(); ?></textarea>
+      <label for="price">Prix</label>
+            <input type="text" name="price" id="price" required value="<?= $data["edit-artist"]->getPrice(); ?>">  
+      </label>
+      <label for="media">Media</label>
+            <input type="file" name="image" />  
+      </label>
+      
+            <input type="submit" value="Modifier le produit">
+       
+            
+    </form>

@@ -143,7 +143,7 @@ nav ul li a:hover {
     transform: scale(1.5);
   }
 }
-@media (orientation: landscape) {
+@media screen and (orientation: landscape) and (min-device-width: 360px) and (max-device-width: 905px) {
   header {
     background-color: #03001C;
     width: 100vw;
@@ -339,6 +339,224 @@ img:hover {
   transform: scale(1.2);
 }
 
+@media (max-width: 359px) {
+  .section1progs {
+    height: 20vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+  }
+  .section1progs .h2progs {
+    font-size: 4rem;
+    display: grid;
+    grid-row: 1/2;
+    text-align: center;
+    font-family: "Risque", cursive;
+    color: #03001C;
+  }
+  .section1progs .h2progs:hover {
+    color: gold;
+    text-shadow: red 2px 2px;
+  }
+  .section1progs .h3progs {
+    font-size: 2rem;
+    display: grid;
+    grid-row: 2/2;
+    text-align: center;
+    font-family: "Risque", cursive;
+    color: #03001C;
+  }
+  .section1progs .h3progs:hover {
+    color: gold;
+    text-shadow: red 2px 2px;
+  }
+  .section2progs h4 {
+    font-size: 1.6rem;
+    font-family: "Risque", cursive;
+    color: #03001C;
+  }
+  .section3progs {
+    display: flex;
+    justify-content: center;
+    gap: 5vw;
+    margin-right: 2vw;
+    padding-bottom: 6vh;
+  }
+  .section3progs .headerarticle {
+    width: 20vw;
+    background-color: #dfe0ea;
+  }
+  .section3progs .headerarticle .h3articleartists {
+    text-decoration: none;
+    width: 25vw;
+    margin-bottom: 1vh;
+    text-decoration: none;
+    font-family: "Risque", cursive;
+    font-size: 1.6rem;
+    color: #03001C;
+  }
+  .section3progs .headerarticle .h3articleartists:hover {
+    color: gold;
+    text-shadow: red 2px 2px;
+  }
+  .imageArtists {
+    width: 21vw;
+    height: 40vh;
+    display: block;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: transform 0.1s;
+  }
+  img:hover {
+    ms-transform: scale(1.2); /* IE 9 */
+    -webkit-transform: scale(1.2); /* Safari 3-8 */
+    transform: scale(1.2);
+  }
+}
+@media (min-width: 360px) and (max-width: 719px) {
+  .section1progs {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+  }
+  .section1progs .h2progs {
+    font-size: 3rem;
+    display: grid;
+    grid-row: 1/2;
+    text-align: center;
+    font-family: "Risque", cursive;
+    color: #03001C;
+  }
+  .section1progs .h2progs:hover {
+    color: gold;
+    text-shadow: red 2px 2px;
+  }
+  .section1progs .h3progs {
+    font-size: 1.8rem;
+    display: grid;
+    grid-row: 2/2;
+    text-align: center;
+    font-family: "Risque", cursive;
+    color: #03001C;
+  }
+  .section1progs .h3progs:hover {
+    color: gold;
+    text-shadow: red 2px 2px;
+  }
+  .section2progs h4 {
+    font-size: 1.6rem;
+    font-family: "Risque", cursive;
+    color: #03001C;
+  }
+  .section3progs {
+    display: flex;
+    justify-content: center;
+    gap: 5vw;
+    margin-right: 2vw;
+    padding-bottom: 6vh;
+  }
+  .section3progs .headerarticle {
+    width: 20vw;
+    background-color: #dfe0ea;
+  }
+  .section3progs .headerarticle .h3articleartists {
+    text-decoration: none;
+    width: 25vw;
+    margin-bottom: 1vh;
+    text-decoration: none;
+    font-family: "Risque", cursive;
+    font-size: 1.2rem;
+    color: #03001C;
+  }
+  .section3progs .headerarticle .h3articleartists:hover {
+    color: gold;
+    text-shadow: red 2px 2px;
+  }
+  .imageArtists {
+    width: 20vw;
+    height: 20vh;
+    display: block;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: transform 0.1s;
+  }
+  img:hover {
+    ms-transform: scale(1.2); /* IE 9 */
+    -webkit-transform: scale(1.2); /* Safari 3-8 */
+    transform: scale(1.2);
+  }
+}
+@media screen and (orientation: landscape) and (min-device-width: 360px) and (max-device-width: 905px) {
+  .section1progs {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+  }
+  .section1progs .h2progs {
+    font-size: 3rem;
+    display: grid;
+    grid-row: 1/2;
+    text-align: center;
+    font-family: "Risque", cursive;
+    color: #03001C;
+  }
+  .section1progs .h2progs:hover {
+    color: gold;
+    text-shadow: red 2px 2px;
+  }
+  .section1progs .h3progs {
+    font-size: 1.8rem;
+    display: grid;
+    grid-row: 2/2;
+    text-align: center;
+    font-family: "Risque", cursive;
+    color: #03001C;
+  }
+  .section1progs .h3progs:hover {
+    color: gold;
+    text-shadow: red 2px 2px;
+  }
+  .section2progs h4 {
+    font-size: 1.4rem;
+    margin-top: 3vh;
+    font-family: "Risque", cursive;
+    color: #03001C;
+  }
+  .section3progs {
+    display: flex;
+    justify-content: center;
+    gap: 5vw;
+    margin-right: 2vw;
+    padding-bottom: 6vh;
+  }
+  .section3progs .headerarticle {
+    width: 20vw;
+    background-color: #dfe0ea;
+  }
+  .section3progs .headerarticle .h3articleartists {
+    text-decoration: none;
+    width: 25vw;
+    margin-bottom: 1vh;
+    text-decoration: none;
+    font-family: "Risque", cursive;
+    font-size: 1.2rem;
+    color: #03001C;
+  }
+  .section3progs .headerarticle .h3articleartists:hover {
+    color: gold;
+    text-shadow: red 2px 2px;
+  }
+  .imageArtists {
+    width: 20vw;
+    height: 30vh;
+    display: block;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: transform 0.1s;
+  }
+  img:hover {
+    ms-transform: scale(1.2); /* IE 9 */
+    -webkit-transform: scale(1.2); /* Safari 3-8 */
+    transform: scale(1.2);
+  }
+}
 .h2artists {
   text-align: center;
   font-size: 4rem;
@@ -388,7 +606,7 @@ img:hover {
 }
 .section1artists a .articleartists .headerarticle img {
   width: 25vw;
-  height: 40vh;
+  height: 35vh;
   display: block;
   justify-content: center;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -523,7 +741,6 @@ img:hover {
   font-size: 4rem;
   font-family: "Risque", cursive;
   color: #03001C;
-  margin-top: 1vh;
 }
 
 .pregister {
@@ -543,7 +760,7 @@ img:hover {
   background-color: #03001C;
   padding: 2rem;
   margin-top: 8vh;
-  height: 52vh;
+  height: 38vh;
   box-shadow: rgba(53, 57, 72, 0.8) 5px 5px, rgba(53, 57, 72, 0.6) 10px 10px, rgba(79, 82, 95, 0.4) 15px 15px, rgba(179, 181, 186, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
 }
 .section2register .articleregister form .h2registerform {
@@ -579,6 +796,104 @@ img:hover {
   color: #03001C;
 }
 
+@media (min-width: 360px) and (max-width: 719px) {
+  .h2register {
+    text-align: center;
+    font-size: 4rem;
+    font-family: "Risque", cursive;
+    color: #03001C;
+    margin-top: 1vh;
+  }
+  .pregister {
+    text-align: center;
+    font-size: 2rem;
+    font-family: "Risque", cursive;
+    color: #03001C;
+  }
+  .section2register .articleregister {
+    display: flex;
+    justify-content: center;
+  }
+  .section2register .articleregister form {
+    background-color: pink;
+    width: 50vw;
+    background-color: #03001C;
+    padding: 2rem;
+    margin-top: 8vh;
+    height: 52vh;
+    box-shadow: rgba(53, 57, 72, 0.8) 5px 5px, rgba(53, 57, 72, 0.6) 10px 10px, rgba(79, 82, 95, 0.4) 15px 15px, rgba(179, 181, 186, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+  }
+  .section2register .articleregister form .h2registerform {
+    color: #dfe0ea;
+    font-family: "Risque", cursive;
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+  .section2register .articleregister form .form-label {
+    font-size: 1.2rem;
+    color: #dfe0ea;
+    font-family: "Risque", cursive;
+    margin-bottom: 0.2rem;
+    display: block;
+    font-weight: bold;
+  }
+  .section2register .articleregister form .btnregister {
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-family: "Risque", cursive;
+    border: none;
+    background-color: #dfe0ea;
+    color: #03001C;
+    font-size: 1.5rem; /* agrandissement de la taille de police pour le bouton */
+    font-weight: bold;
+  }
+  .section2register .articleregister form fieldset {
+    margin: 1rem 0;
+  }
+}
+@media screen and (orientation: landscape) and (min-device-width: 360px) and (max-device-width: 905px) {
+  .section2register .articleregister {
+    display: flex;
+    justify-content: center;
+  }
+  .section2register .articleregister form {
+    background-color: pink;
+    width: 50vw;
+    background-color: #03001C;
+    padding: 2rem;
+    margin-top: 8vh;
+    margin-bottom: 4vh;
+    height: 90vh;
+    box-shadow: rgba(53, 57, 72, 0.8) 5px 5px, rgba(53, 57, 72, 0.6) 10px 10px, rgba(79, 82, 95, 0.4) 15px 15px, rgba(179, 181, 186, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+  }
+  .section2register .articleregister form .h2registerform {
+    color: #dfe0ea;
+    font-family: "Risque", cursive;
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+  .section2register .articleregister form .form-label {
+    font-size: 1.2rem;
+    color: #dfe0ea;
+    font-family: "Risque", cursive;
+    margin-bottom: 0.2rem;
+    display: block;
+    font-weight: bold;
+  }
+  .section2register .articleregister form .btnregister {
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-family: "Risque", cursive;
+    border: none;
+    background-color: #dfe0ea;
+    color: #03001C;
+    font-size: 1.5rem; /* agrandissement de la taille de police pour le bouton */
+    font-weight: bold;
+  }
+  .section2register .articleregister form fieldset {
+    margin: 1rem 0;
+  }
+}
 .mainlogin {
   height: 80vh;
   display: flex; /* ajout pour activer le flexbox */
@@ -697,7 +1012,7 @@ img:hover {
     color: #03001C;
   }
 }
-@media (orientation: landscape) {
+@media screen and (orientation: landscape) and (min-device-width: 360px) and (max-device-width: 905px) {
   .mainlogin {
     height: 94vh;
     display: flex; /* ajout pour activer le flexbox */
