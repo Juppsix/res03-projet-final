@@ -56,16 +56,17 @@ class ArtistManager extends AbstractManager {
     
     public function createArtist(Artist $artist) : Artist
     {
-        $query = $this->db->prepare('INSERT INTO artists VALUES (:id, :name, :slug, :description, :price)');
+        $query = $this->db->prepare('INSERT INTO artists VALUES (:id, :name, :slug, :description, :price, :img_url)');
         $parameters = [
             'id' => $artist->getId(),
             'name' => $artist->getName(),
             'slug' => $artist->getSlug(),
             'description' => $artist->getDescription(),
-            'price' => $artist->getPrice()
+            'price' => $artist->getPrice(),
+            'img_url' => $artist->getImg_url()
             ];
             $query->execute($parameters);
-            $query->fetch(PDO::FETCH_ASSOC);
+            // $query->fetch(PDO::FETCH_ASSOC);
             $id = $this->db->lastInsertId();
             $artist->setId($id);
             

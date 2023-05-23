@@ -7,19 +7,19 @@ window.addEventListener("DOMContentLoaded", function(){
 
        let user = new User();
 
-       user.userName = document.getElementById("username").value;
+       user.username = document.getElementById("username").value;
        user.email = document.getElementById("email").value;
        user.password = document.getElementById("password").value;
        user.confirmPassword = document.getElementById("confirm-password").value;
 
-      if (!user.validate()) 
+       if (!user.validate()) 
        {
             event.preventDefault();
             alert('Erreur :(');
       } 
       else 
       {
-         alert('Ok :)');
+         alert('Tout est OK :)');
       }
    });
 

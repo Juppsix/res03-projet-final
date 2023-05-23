@@ -1,24 +1,23 @@
-export class User {
-    userName;
+export default class User {
+    username;
     email;
     password;
-    role;
     confirmPassword;
 
-    constructor(userName = "", email = "", password = "", role = "", confirmPassword= "") {
-        this.userName = userName;
+    constructor(username = "", email = "", password = "", confirmPassword = "") {
+        
+        this.username = username;
         this.email = email;
         this.password = password;
-        this.role = role;
         this.confirmPassword = confirmPassword;
     }
 
-    get userName () {
-      return this.userName;
+    get username () {
+      return this.username;
     }
 
-    set userName (userName) {
-        this.userName = userName;
+    set username (username) {
+        this.username = username;
     }
 
     get email () {
@@ -37,15 +36,7 @@ export class User {
         this.password = password;
     }
 
-    get role () {
-        return this.role;
-    }
-
-    set role (role) {
-        this.role = role;
-    }
-    
-     get confirmPassword () {
+    get confirmPassword () {
         return this.confirmPassword;
     }
 
@@ -53,10 +44,9 @@ export class User {
         this.confirmPassword = confirmPassword;
     }
 
-
     validate() {
         if(this.checkEqualPassword() === true &&
-        this.userName() === true &&
+        this.checkUsername() === true &&
         this.checkEmail() === true)
         {
             return true;
@@ -67,21 +57,21 @@ export class User {
         }
     }
 
-   checkEqualPassword() {
+    checkEqualPassword() {
         if(this.password === this.confirmPassword)
        {
-           return true; // vérifier que this.password est = à this.confirmPassword
+           return true; // vérifier que this.password est égal à this.confirmPassword
        }
-        //c'est optionnel, si il y a des regles de password (longueur, minusculs / majuscules etc etc) vérifier ici
+        // optionnel si il y a des regles de password (longueur, minusculs / majuscules etc etc) vérifier ici
         else{
-            return false;  // si c'est ok on return true sinon on return false
+            return false;  // si c'est bon return true sinon return false
         }
     }
     checkUsername() {
-        if(this.username.length <=255) // vérifier que this.username fait moins de 255 caracteres
+        if(this.username.length <=255) // vérifier que this.username fait moins de 256 caractères
         {
             return true
-        }                    // si c'est ok on return true sinon on return false
+        }                    // si c'est bon return true sinon return false
         else{
             return false
         }

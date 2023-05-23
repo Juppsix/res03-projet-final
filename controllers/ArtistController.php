@@ -15,8 +15,9 @@ class ArtistController extends AbstractController {
     
     public function artists() : void 
     {
+        
        $artists = $this->am->getAllArtists();  //appel au manager pour récuperer la liste des artistes
-      
+      var_dump($artists);
        if (isset($_SESSION["user"]) && ($_SESSION["user"] === "customer" || $_SESSION["user"] === "admin")){
         $this->render("artists", [  
         "artists" => $artists,
@@ -55,13 +56,13 @@ class ArtistController extends AbstractController {
     
     public function createArtist(array $post) : void 
 {
-       echo "Hello World";
+      echo "Hello World";
         var_dump($post);
         
-    if (isset($post["name"]) && isset($post["slug"]) && isset($post["description"]) && isset($post["price"])) {
+    if (isset($post["name"]) && isset($post["slug"]) && isset($post["description"]) && isset($post["price"]) && isset($post["img_url"])) {
         $uploader = new Uploader();
             $media = $uploader->upload($_FILES, "image");
-        $newArtist =  new Artist($this->clean($post["name"]),$this->clean($post["slug"]),$this->clean($post["description"]),$this->clean($post["price"]),$media);
+        $newArtist =  new Artist($this->clean($post["name"]),$this->clean($post["slug"]),$this->clean($post["description"]),$this->clean($post["price"]),($post["img_url"]));
         $createdArtist = $this->am->createArtist($newArtist);
         $this->renderAdmin("create-artist", [
             "artist" => $createdArtist,
@@ -74,6 +75,27 @@ class ArtistController extends AbstractController {
               ]);
     }
 }
+
+// public function createArtist() : void
+//     {
+//       $categories = $this->am->getAllArtists();
+//         $this->renderAdmin("create-artist", [$artists
+//             ]);
+//     }
+// public function checkCreateArtist(array $post) : void
+//     {
+
+//         $uploader = new Uploader();
+//         $media = $uploader->upload($_FILES, "image");
+//         $post["img_url"]= $media->getImg_url();
+//         var_dump($post);
+//         $tab = [];
+//         $artist = new Artist($this->clean($post["name"]),$this->slugify($post["name"]),$this->clean($post["description"]), intval($this->clean($post["price"])), $post["media"]);
+//         $newprod = $this->am->createArtist($product);
+
+//         header('Location: creer-produit');
+//         exit;
+//     }
     
     public function editArtist(string $artistSlug) : void 
     {

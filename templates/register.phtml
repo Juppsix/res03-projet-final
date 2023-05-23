@@ -11,7 +11,8 @@
     </section>
     <section class="section2register">
         <article class="articleregister">
-    <form method="post" action="/res03-projet-final/check-creer-un-compte" class="col-4"> 
+    <!--<form method="post" action="/res03-projet-final/check-creer-un-compte" class="col-4"> -->
+    <form method="post" action="/res03-projet-final/check-creer-un-compte"id="user-form"> 
     <h2 class="h2registerform">Créer un compte</h2> 
         <input type="hidden" name="formName" id="formName" value="registerForm" />  
         <fieldset class="mb-3">  
@@ -33,10 +34,10 @@
             <input type="password" name="password" id="password" class="form-control" required />  
         </fieldset>  
         <fieldset class="mb-5">  
-            <label for="confirmPassword" class="form-label">  
+            <label for="confirm-password" class="form-label">  
                 Confirmer le mot de passe
             </label>  
-            <input type="password" name="confirmPassword" id="confirmPassword" class="form-control" required />  
+            <input type="password" name="confirmPassword" id="confirm-password" class="form-control" required />  
         </fieldset>  
         <button type="submit" class="btnregister">Créer un compte</button>  
     </form>
